@@ -1,0 +1,72 @@
+$enable-shadows: true;
+$primary: #384d79;
+$danger: #fb6970;
+$success: #52a377;
+$warning: #f2ad06;
+$enable-responsive-font-sizes: true;
+
+@import "bootstrap/scss/bootstrap.scss";
+
+/* modal css */
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.ReactModal__Overlay {
+  z-index: 1200;
+  background: rgba(0, 0, 0, 0.6) !important;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.reveal {
+  width: 100%;
+  max-width: 640px;
+  margin: 100px auto 100px;
+  padding: 2rem;
+  background: #fff;
+  position: relative;
+  border-radius: 8px;
+  outline: none;
+  &.small {
+    max-width: 480px;
+  }
+  &.medium {
+    max-width: 520px;
+  }
+  &.special {
+    overflow: visible;
+  }
+  &.dialog-modal {
+    max-width: 360px;
+    .button {
+      margin: 0;
+      color: #fff;
+    }
+    &.success {
+      background: #efe;
+    }
+  }
+  @media only screen and (max-width: 640px) {
+    max-width: 90% !important;
+    &.small {
+      max-width: 90%;
+    }
+  }
+}
+
+.close-reveal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 2rem;
+  line-height: 32px;
+  text-align: center;
+  color: #999;
+  z-index: 5;
+  transform-origin: 50% 50%;
+  background: none;
+}
