@@ -14,9 +14,10 @@ export default function Home() {
     isLoading: false,
     isError: false,
     success: false,
+    workTab: 0,
   };
   const { state, setState } = useSetState(initialState);
-  const { isOpen, name, email, isLoading, isError, success } = state;
+  const { isOpen, name, email, isLoading, isError, success, workTab } = state;
   const handleSubmit = async e => {
     e.preventDefault();
     setState({ isLoading: true, isError: false, success: false });
@@ -24,7 +25,7 @@ export default function Home() {
       lists: process.env.NEXT_PUBLIC_KE_LIST_ID,
       email,
       full_name: name,
-      tags: 'free-strategy, via-api',
+      tags: 'dev-strategy, via-api',
     };
     await subscribeForm(payload)
       .then(resp => {
@@ -42,7 +43,7 @@ export default function Home() {
     <div>
       <Head>
         <title>
-          {profile.name} - {profile.title}
+          {profile.name} | {profile.mission}
         </title>
         <meta name="author" content={profile.name} />
         <meta name="twitter:card" content="summary" key="twcard" />
@@ -58,89 +59,51 @@ export default function Home() {
         />
         <meta
           property="og:site_name"
-          content={`${profile.name} - ${profile.title}`}
+          content={`${profile.name} | ${profile.mission}`}
           key="ogsitename"
         />
-        <meta
-          property="og:title"
-          content={`Resume: ${profile.name} - ${profile.title}`}
-          key="ogtitle"
-        />
-        <meta property="og:description" content={profile.about} key="ogdesc" />
+        <meta property="og:title" content={`${profile.name} - ${profile.mission}`} key="ogtitle" />
+        <meta property="og:description" content={profile.intro} key="ogdesc" />
       </Head>
       <div id="app-container">
-        <div id="top" className="top-bar bg-dark py-2 shadow-sm">
+        <div id="top" className="top-bar py-2 shadow-sm d-none">
           <div className="container">
             <div className="row">
               <div className="col">
                 <h6 className="m-0 text-center text-light">
-                  <strong className="text-warning">Attention</strong>&nbsp; Small Business Owners,
-                  CEO(s), Entrepreneurs, Consultants
+                  <strong className="text-warning">Attention</strong>&nbsp; Programmers, Creatives
                 </h6>
               </div>
             </div>
           </div>
         </div>
         <section id="content">
-          <div id="hero" className="py-5">
+          <div id="hero" className="p-3 py-5">
             <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div className="py-3 py-md-5">
-                    <div className="row justify-content-center">
-                      <div className="col-12">
-                        <h1 className="text-center mb-4 display-3 fw-bold  lh-sm">
-                          <strong className="highlight ">2021 Update!</strong> Upgrade{' '}
-                          <strong>Your First (or Next) Website</strong> into{' '}
-                          <strong>Sales Funnel..</strong>{' '}
-                          <strong>
-                            <u>Today!</u>
-                          </strong>
-                        </h1>
-                        <h3 className="text-center text-danger">
-                          <em>
-                            Trusted by 19+ companies from Indonesia, Singapore, US, and Finland!
-                          </em>
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="hero-image text-center mb-5">
-                      <Image
-                        src="/images/hero-showcase.png"
-                        alt="Showcase"
-                        layout="responsive"
-                        width="1447"
-                        height="682"
-                      />
-                    </div>
-                    <div className="row justify-content-center">
-                      <div className="col-12 col-md-8">
-                        <div className="sponsors mb-5 text-center">
-                          <Image
-                            src="/images/sponsors.png"
-                            alt="Sponsored"
-                            width="1200"
-                            height="75"
-                            layout="responsive"
-                            className="img-grayscale"
-                          />
+              <div className="row justify-content-center">
+                <div className="col-12 col-md-12 col-lg-10">
+                  <div className="py-3 py-md-5 text-light">
+                    <div className="py-3 py-md-5">
+                      <h2 className="text-primary fs-5">Hi, my name is</h2>
+                      <h1 className="display-3 text-warning mb-1" style={{ fontWeight: '900' }}>
+                        Ervandra Halim.
+                      </h1>
+                      <h3 className="mb-5 fw-bold">{profile.mission}.</h3>
+                      {/* <h2 className="mb-5 display-4 fw-bold">I build anything for the web.</h2> */}
+                      {/* <h2 className="mb-5 fs-6">using technology for the human future</h2> */}
+                      <div className="row">
+                        <div className="col-12 col-md-7">
+                          <p className="mb-5">{profile.intro}</p>
                         </div>
-                        <h5 className="text-center mb-5">
-                          For 10+ years building <strong>website</strong> for{' '}
-                          <strong>companies</strong> and <strong>clients</strong> (
-                          <em>just like you</em>), we have found that <strong>Sales Funnel</strong>{' '}
-                          is the principal key to <strong>generate</strong> more{' '}
-                          <strong>profits for all of businesses!</strong>
-                        </h5>
                       </div>
-                    </div>
 
-                    <div className="button-container text-center">
-                      <button
-                        className="btn btn-primary btn-lg shadow-lg border-3 fw-bold p-3 px-5 text-uppercase fs-3"
-                        onClick={() => setState({ isOpen: true })}>
-                        Claim Your Free Strategy Call
-                      </button>
+                      <div className="button-container">
+                        <button
+                          className="btn btn-outline-success shadow border-2 fw-bold btn-lg fs-6"
+                          onClick={() => setState({ isOpen: true })}>
+                          Claim Free Web Apps Starter
+                        </button>
+                      </div>
                     </div>
                     <Modal
                       isOpen={isOpen}
@@ -156,17 +119,17 @@ export default function Home() {
                           </div>
                         ) : (
                           <form onSubmit={handleSubmit} className="px-0 px-md-3">
-                            <h3 className="text-center mb-3 fw-bold">
+                            <h4 className="text-center mb-3 fw-bold">
                               Fill out form below and{' '}
                               <strong className="text-success">
-                                Claim Your Free Strategy Session
+                                Claim Your Free Web Apps Starter
                               </strong>{' '}
                               Now.
-                            </h3>
+                            </h4>
                             <div className="form-group mb-3">
                               <input
                                 type="text"
-                                className="form-control form-control-lg"
+                                className="form-control "
                                 placeholder="Your Name:"
                                 value={name}
                                 disabled={isLoading}
@@ -176,7 +139,7 @@ export default function Home() {
                             <div className="form-group mb-4">
                               <input
                                 type="email"
-                                className="form-control form-control-lg"
+                                className="form-control "
                                 placeholder="Your Email:"
                                 required
                                 disabled={isLoading}
@@ -193,8 +156,8 @@ export default function Home() {
                             ) : (
                               <button
                                 type="submit"
-                                className="btn btn-lg btn-success text-uppercase fw-bold shadow w-100 text-light">
-                                Claim Free Strategy
+                                className="btn fs-6 fs-md-5 py-3 btn-success text-uppercase fw-bold shadow w-100">
+                                Claim Free Web Apps Starter
                               </button>
                             )}
                             <p className="mb-0 text-muted text-center mt-4">
@@ -215,7 +178,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="top-testimony" className="py-5">
+          <div id="top-testimony" className=" d-none p-3 py-5 bg-dark text-light">
             <div className="container">
               <div className="row align-items-center justify-content-center">
                 <div className="col-12 col-md-auto">
@@ -239,17 +202,17 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="col-12 col-md-auto">
-                  <div className="testimony-content p-3 bg-gradient rounded-pill px-4 shadow-lg mb-0 position-relative">
+                  <div className="testimony-content p-3 mb-0 position-relative">
                     <span
-                      className="position-absolute h1 text-danger"
-                      style={{ top: '-.5rem', left: '.5rem' }}>
+                      className="position-absolute h1 text-success"
+                      style={{ top: '-.5rem', left: '0' }}>
                       &ldquo;
                     </span>
                     <p className="mb-0 fw-bold">
                       <em>
-                        We decided to trust Ervan for his crazy strategies, and we never regret it!
-                        <br />I never thought sales funnel strategy could grow my new business in
-                        just several months
+                        We trust Ervan for his new strategies, and we've never regretted it!
+                        <br />I never thought sales funnel could grow my new business in just
+                        several months
                       </em>
                     </p>
                   </div>
@@ -257,56 +220,50 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="what-you-get" className="py-5">
+          <div id="about-me" className="p-3 py-5">
             <div className="container">
-              <div className="row">
-                <div className="col">
+              <div className="row justify-content-center">
+                <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
-                    <h2 className="mb-3 ">
-                      What You'll <strong>GET</strong> During This{' '}
-                      <strong>Free Strategy Session</strong>
-                    </h2>
-                    <p className="mb-5 fs-5">
-                      I understand that both of our <strong>time</strong> are very{' '}
-                      <strong>valuable</strong>, so i wouldn't waste any of your time as mine also
-                      precious.
-                      <br />I will break down our call into these <strong>3-easy steps</strong> that
-                      will help you to realize that your business need a better{' '}
-                      <strong>sales funnel</strong>:
-                    </p>
-                    <div id="easy-steps" className="py-3">
-                      <div className="row">
-                        <div className="col-12 col-md-4">
-                          <h3 className="mb-3 fw-bold fs-4  border-bottom pb-3 border-2 border-success">
-                            1️⃣ Preparation
-                          </h3>
-                          <p>
-                            Before we're going on call, you can prepare your website information,
-                            conversion rate, and business model as we're going through the deepest
-                            factor of your business: your sales funnel.
-                          </p>
+                    <div className="row justify-content-between align-items-center">
+                      <div className="col-12 col-md-3 order-md-2 text-center">
+                        <div className="rounded-circle about-img img-thumbnail shadow-lg mb-3 mx-auto">
+                          <Image
+                            src="/images/ervan.png"
+                            alt="Ervandra Halim"
+                            width="300"
+                            height="300"
+                            layout="responsive"
+                            className=""
+                          />
                         </div>
-                        <div className="col-12 col-md-4">
-                          <h3 className="mb-3 fw-bold fs-4  border-bottom pb-3 border-2 border-success">
-                            2️⃣ Consultation
-                          </h3>
-                          <p>
-                            While we're on call, we will talk about your current situation and your
-                            desired outcome that you want from us. I will help to simulate your
-                            goals and insight within this call.
-                          </p>
-                        </div>
-                        <div className="col-12 col-md-4">
-                          <h3 className="mb-3 fw-bold fs-4  border-bottom pb-3 border-2 border-success">
-                            3️⃣ Complete Review
-                          </h3>
-                          <p>
-                            At the end of the call, i will give your step-by-step Framework that you
-                            can follow immediately to start upgrade your business, in this case your
-                            website into brand new sales funnel that will generate profits and grow
-                            your business to the next level.{' '}
-                          </p>
-                        </div>
+                      </div>
+                      <div className="col-12 col-md-6">
+                        <h2 className="fw-bold mb-4">About Me</h2>
+                        <p>
+                          Hello! I'm Ervandra, a software engineer based in Jakarta, Indonesia who
+                          enjoys building things that live on the internet. I develop exceptional
+                          websites and web apps that provide intuitive, pixel-perfect user
+                          interfaces with efficient and modern backends.
+                        </p>
+                        <p>
+                          Currently, I'm a Senior Software Engineer, Web at{' '}
+                          <a
+                            href="https://www.rga.com"
+                            target="_blank"
+                            className="fw-bold"
+                            rel="noopener noreferrer">
+                            R/GA!
+                          </a>
+                        </p>
+                        <p>Here are a few technologies I've been working with recently:</p>
+                        <ul className="d-flex flex-wrap text-warning fst-italic">
+                          <li className="w-100 w-md-50">Javascript (ES6+)</li>
+                          <li className="w-100 w-md-50">HTML + CSS / SASS</li>
+                          <li className="w-100 w-md-50">React.js (+Next.js)</li>
+                          <li className="w-100 w-md-50">React Native</li>
+                          <li className="w-100 w-md-50">Typescript</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -314,47 +271,84 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="about-ervan" className="py-5" style={{ background: 'rgba(0,0,0,.9)' }}>
+          <div id="workplace" className="p-3 py-5">
             <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div className="py-3 py-md-5 text-center">
-                    <div className="about-ervan-image mb-3">
-                      <div
-                        className="img-thumbnail d-inline-block rounded-circle shadow"
-                        style={{ width: '120px', height: '120px' }}>
-                        <Image
-                          src="/images/ervan.png"
-                          alt="Ervandra Halim"
-                          className="rounded-circle"
-                          width="110"
-                          height="110"
-                          layout="responsive"
-                        />
+              <div className="row justify-content-center">
+                <div className="col-12 col-lg-10">
+                  <div className="py-3 py-md-5">
+                    <h2 className="fw-bold mb-5">Where I've Contributing</h2>
+                    <div className="row">
+                      <div className="col-12 col-md-3 col-lg-2">
+                        <div
+                          className="nav flex-md-column nav-pills me-0 me-md-5 mb-3 "
+                          role="tablist"
+                          aria-orientation="vertical">
+                          {profile.experiences.map((exp, index) => {
+                            const active = index === workTab;
+                            if (active)
+                              return (
+                                <button
+                                  key={exp.company + index}
+                                  className="nav-link rounded-0 text-nowrap text-start active bg-dark text-primary border-start border-2 border-success"
+                                  type="button"
+                                  role="tab">
+                                  {exp.company}
+                                </button>
+                              );
+                            return (
+                              <button
+                                key={exp.company + index}
+                                className="nav-link rounded-0 text-nowrap text-start text-muted border-start border-2 border-secondary"
+                                type="button"
+                                onClick={() => setState({ workTab: index })}
+                                role="tab">
+                                {exp.company}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      <div className="col-12 col-md-9 col-lg-10">
+                        <div className="tab-content">
+                          {profile.experiences.map((exp, index) => {
+                            const active = index === workTab;
+                            if (active)
+                              return (
+                                <div className="tab-pane fade show active" role="tabpanel">
+                                  <div className="workplace-content">
+                                    <h5 className="mb-1 fw-bold">
+                                      {exp.title}{' '}
+                                      <span className="text-primary">@ {exp.company}</span>
+                                    </h5>
+                                    <h6 className="text-muted small mb-3">{exp.year}</h6>
+                                    <ul className="fst-italic">
+                                      {exp.summary.map((sum, idx) => (
+                                        <li key={sum + idx}>{sum}</li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                </div>
+                              );
+                            return (
+                              <div className="tab-pane " role="tabpanel">
+                                <div className="workplace-content py-3">
+                                  <h5 className="mb-1 fw-bold">
+                                    {exp.title}{' '}
+                                    <span className="text-primary">@ {exp.company}</span>
+                                  </h5>
+                                  <h6 className="text-muted small mb-3">{exp.year}</h6>
+                                  <ul className="fst-italic">
+                                    {exp.summary.map((sum, idx) => (
+                                      <li key={sum + idx}>{sum}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
-                    <h2 className="mb-3">About Ervandra Halim</h2>
-                    <p>
-                      Ervan has helped his valuable partners and client across the globe for 10+
-                      years in Website & Apps Development and Digital Marketing Strategies.
-                    </p>
-
-                    <p>
-                      Currently he's on a mission to help small business to leverage Sales Funnel to
-                      grow their business and reach the next level.
-                    </p>
-
-                    <p>
-                      He's a very technical-guy, and his solution will always work at a higher level
-                      of implementation, he will be your first (or next) Tech Lead Consultant.
-                    </p>
-
-                    <p>
-                      His clients admire him for his innovative and proactive way to deliver
-                      results.
-                    </p>
-
-                    <p>And yes, he's always #overdeliver!</p>
                   </div>
                 </div>
               </div>
@@ -368,19 +362,20 @@ export default function Home() {
                   <div className="py-3 py-md-5">
                     <h2 className="mb-5 text-center">
                       Why'd They Recommend <br />
-                      <strong>Work With Ervan?</strong>
+                      <strong className="text-warning">Work With Ervan?</strong>
                     </h2>
                     <p className="fs-5 mb-5 text-center">
-                      My partner and valuable clients will tell you their experiences work with me.
+                      My partner and valuable clients will tell you their experiences to work with
+                      me.
                     </p>
 
                     <div id="client-testimony">
                       <div className="row">
                         <div className="col-12 col-md-4">
                           <div className="testimony-item">
-                            <div className="card shadow-lg rounded-3">
-                              <div className="card-body p-3">
-                                <div className="row">
+                            <div className="card  bg-transparent bg-gradient shadow-lg border-2  rounded-3">
+                              <div className="card-body p-4">
+                                <div className="row align-items-center">
                                   <div className="col-3">
                                     <img
                                       src="https://www.ervandra.com/wp-content/uploads/2021/03/1595011353248-150x150.jpeg"
@@ -391,11 +386,81 @@ export default function Home() {
                                   <div className="col-9">
                                     <h6 className="mb-1 fw-bold">Donny Riantori</h6>
                                     <h6 className="small mb-0">
-                                      Co-founder & Chief Technology Officer - Gomodo Technologies
-                                      Pte Ltd
+                                      Co-founder & CTO - Gomodo Technologies Pte Ltd
                                     </h6>
                                   </div>
                                 </div>
+                                <p className="lh-2 small mb-0 mt-3">
+                                  <em>
+                                    Ervandra is an extraordinary software engineer, he always comes
+                                    with a great solution, practical and impactful for any result of
+                                    his project, you will find "engineering thinking", lives on this
+                                    very talented guy, not only on his work but also on every
+                                    process that he takes.
+                                  </em>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-12 col-md-4">
+                          <div className="testimony-item mt-4">
+                            <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
+                              <div className="card-body p-4">
+                                <div className="row align-items-center">
+                                  <div className="col-3">
+                                    <img
+                                      src="https://www.ervandra.com/wp-content/uploads/2021/03/1604991119630-150x150.jpeg"
+                                      alt=""
+                                      className="img-thumbnail rounded-circle"
+                                    />
+                                  </div>
+                                  <div className="col-9">
+                                    <h6 className="mb-1 fw-bold">Erick Liemarga</h6>
+                                    <h6 className="small mb-0">Chief Product Officer - LABABOOK</h6>
+                                  </div>
+                                </div>
+                                <p className="lh-2 small mb-0 mt-3">
+                                  <em>
+                                    If you're looking for a versatile frontend web developer I'll
+                                    definitely recommend Ervandra right away. Several qualities of
+                                    him that I could easily recommend are; Open minded, critical
+                                    thinking, resourceful and always look for improvement. He's
+                                    always work really hard to improve and expand his knowledge.
+                                  </em>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-12 col-md-4">
+                          <div className="testimony-item">
+                            <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
+                              <div className="card-body p-4">
+                                <div className="row align-items-center">
+                                  <div className="col-3">
+                                    <img
+                                      src="/images/jussi-hurmola.jpg"
+                                      alt=""
+                                      className="img-thumbnail rounded-circle"
+                                    />
+                                  </div>
+                                  <div className="col-9">
+                                    <h6 className="mb-1 fw-bold">Jussi Hurmola</h6>
+                                    <h6 className="small mb-0">
+                                      Chief Executive Office - LifeLearn Holdings Pte Ltd
+                                    </h6>
+                                  </div>
+                                </div>
+                                <p className="lh-2 small mb-0 mt-3">
+                                  <em>
+                                    Ervandra is a very special person for us. He always overdeliver
+                                    his services, even without being asked! He saved us multiple
+                                    times due to our primitive and outdated backend system, he
+                                    provide quick and working solutions. Indeed, our most valuable
+                                    person regarding to technology, especially web applications.
+                                  </em>
+                                </p>
                               </div>
                             </div>
                           </div>

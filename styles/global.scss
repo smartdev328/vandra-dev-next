@@ -1,8 +1,12 @@
 $enable-shadows: true;
-$primary: #384d79;
+$dark: #15232d;
+$primary: #a5ff90;
 $danger: #fb6970;
-$success: #52a377;
-$warning: #f2ad06;
+$success: #a5ff90;
+$warning: #ffc600;
+$border-radius: 0.5em;
+$border-radius-lg: 1em;
+
 $enable-responsive-font-sizes: true;
 
 @import "bootstrap/scss/bootstrap.scss";
@@ -15,7 +19,7 @@ $enable-responsive-font-sizes: true;
 
 .ReactModal__Overlay {
   z-index: 1200;
-  background: rgba(0, 0, 0, 0.6) !important;
+  background: rgba(0, 0, 0, 0.95) !important;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -25,7 +29,7 @@ $enable-responsive-font-sizes: true;
   max-width: 640px;
   margin: 100px auto 100px;
   padding: 2rem;
-  background: #fff;
+  background: #15232d;
   position: relative;
   border-radius: 8px;
   outline: none;

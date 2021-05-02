@@ -1,11 +1,14 @@
 const profile = {
   name: 'Ervandra Halim',
-  title: 'IT Consultant',
+  title: 'Software Engineer',
+  mission: "I'm Building Technology For A More Human Future",
   email: 'hi@ervandra.com',
   phone: '+6287708770800',
   photo: 'https://www.ervandra.com/wp-content/uploads/2020/12/ervan-round.png',
   about:
-    "I'm Ervandra Halim, a Software Engineer. Through my entire career, i realize that i love the most to conceptualize a website or web applications, write technical specifications and develop it with my team into a high-quality applications that are feasible, scalable, testable and measurable that will also meet with the business requirements.",
+    "I'm Ervandra Halim, a Ssoftware engineer. Through-out my entire career, i realize that i love the most to conceptualize a website or web applications, write technical specifications and develop it with my team into a high-quality applications that are feasible, scalable, testable and measurable that will also meet with the business requirements.",
+  intro:
+    "I'm a software engineer based in Jakarta, Indonesia specializing in crafting (and occasionally designing) exceptional, highly-effective websites and applications.",
   professionalSkills: [
     'Front-End Development',
     'HTML & CSS (SASS)',
@@ -40,13 +43,14 @@ const profile = {
       logoCompany: 'https://via.placeholder.com/12/e51837?text=+',
       year: 'May 2021 - Present',
       summary: [
-        'Write technical specifications, help my team to meet business requirements',
-        'Create blueprint project, and scaling the apps',
-        'Code review, upgrading version and optimizing features',
-        'Recoding web apps to catch the latest technology updates',
-        'Transform UI into interactive components and smooth client view',
-        'Planning deployments, manage release and implement CI/CD',
-        'Hands-on to coding and styling main project and other micro-site projects',
+        'Work with R/GA teams across multiple offices, collaborating with multiple disciplines',
+        'Evaluate and recommend technology solutions that best fit project requirements',
+        'Collaborate with experience and visual design, strategy to build and deliver successful digital experiences with technical solutions',
+        'Assist teams on technical feasibility, risk and effort estimation',
+        'Help with technical assessment and prototyping to de-risk and prove out concepts',
+        'Write clean, readable, modern, secure, robust and well performing code according to world-class standards',
+        'Lead by example and mentor junior members on best-practices on daily basis',
+        'Manage tasks and workloads responsibly to ensure successful development and project deliverables',
       ],
     },
     {
@@ -67,7 +71,7 @@ const profile = {
     },
     {
       title: 'Senior Frontend Developer',
-      company: 'PT. Dragon Capital Centre',
+      company: 'DCC',
       logoCompany:
         'https://media-exp1.licdn.com/dms/image/C560BAQGey9YiNk4yOw/company-logo_100_100/0/1519872267902?e=1627516800&v=beta&t=jH7xtdbxvkk_qThbSiOn2x-jjfgreOZg_eO_49wsrVw',
       year: 'Jun 2015 - Dec 2016',
