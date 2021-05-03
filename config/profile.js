@@ -1,12 +1,14 @@
 const profile = {
   name: 'Ervandra Halim',
   title: 'Software Engineer',
-  mission: "I'm Building Technology For A More Human Future",
+  mission: "I'm Crafting Technology For A More Human Future",
   email: 'hi@ervandra.com',
   phone: '+6287708770800',
   photo: 'https://www.ervandra.com/wp-content/uploads/2020/12/ervan-round.png',
   about:
     "I'm Ervandra Halim, a Ssoftware engineer. Through-out my entire career, i realize that i love the most to conceptualize a website or web applications, write technical specifications and develop it with my team into a high-quality applications that are feasible, scalable, testable and measurable that will also meet with the business requirements.",
+  offerIntro:
+    'Get my thoughts twice a week in a bite size tech news called the Overcodes, where i cover about latest technologies, programming tips and modern business.',
   intro:
     "I'm a software engineer based in Jakarta, Indonesia specializing in crafting (and occasionally designing) exceptional, highly-effective websites and applications.",
   professionalSkills: [
@@ -38,7 +40,7 @@ const profile = {
   ],
   experiences: [
     {
-      title: 'Senior Software Engineer',
+      title: 'Senior Software Engineer, Web Platforms',
       company: 'R/GA',
       logoCompany: 'https://via.placeholder.com/12/e51837?text=+',
       year: 'May 2021 - Present',

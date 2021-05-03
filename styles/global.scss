@@ -19,7 +19,8 @@ $enable-responsive-font-sizes: true;
 
 .ReactModal__Overlay {
   z-index: 1200;
-  background: rgba(0, 0, 0, 0.95) !important;
+  background: rgba(0, 0, 0, 0.66) !important;
+  backdrop-filter: blur(2px);
   overflow: hidden;
   overflow-y: auto;
 }
@@ -29,9 +30,11 @@ $enable-responsive-font-sizes: true;
   max-width: 640px;
   margin: 100px auto 100px;
   padding: 2rem;
-  background: #15232d;
+  background: #15232dee url(/images/bg-dust.png) center no-repeat;
+  background-size: cover;
   position: relative;
-  border-radius: 8px;
+  border-radius: 1em;
+  box-shadow: var(--bs-shadow);
   outline: none;
   &.small {
     max-width: 480px;

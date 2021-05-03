@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <link href="/fonts/OperatorMono/fontface.css" rel="stylesheet" />
       </Head>
       <Component {...pageProps} />
     </>

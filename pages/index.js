@@ -15,9 +15,10 @@ export default function Home() {
     isError: false,
     success: false,
     workTab: 0,
+    isMenuOpen: false,
   };
   const { state, setState } = useSetState(initialState);
-  const { isOpen, name, email, isLoading, isError, success, workTab } = state;
+  const { isOpen, name, email, isLoading, isMenuOpen, success, workTab } = state;
   const handleSubmit = async e => {
     e.preventDefault();
     setState({ isLoading: true, isError: false, success: false });
@@ -66,6 +67,68 @@ export default function Home() {
         <meta property="og:description" content={profile.intro} key="ogdesc" />
       </Head>
       <div id="app-container">
+        <header
+          id="header"
+          className={`${isMenuOpen ? '' : 'sticky-top'} shadow py-2`}
+          style={{ backdropFilter: 'blur(2px)', background: '#15232dcc' }}>
+          <div className="container">
+            <div className="col">
+              <div className="col-12">
+                <div className="d-flex align-items-center justify-content-between">
+                  <div className="logo">
+                    <Image
+                      src="/images/logo.svg"
+                      alt="Ervandra Halim"
+                      width="48"
+                      height="48"
+                      layout="intrinsic"
+                      className="d-block"
+                    />
+                  </div>
+                  <nav id="mainmenu">
+                    <div className="d-none d-md-flex justify-content-end align-items-center">
+                      <ul className="m-0 d-flex">
+                        <li className="d-block ms-3">
+                          <a className="text-decoration-none" href="#about">
+                            About
+                          </a>
+                        </li>
+                        <li className="d-block ms-3">
+                          <a className="text-decoration-none" href="#experience">
+                            Experience
+                          </a>
+                        </li>
+                        <li className="d-block ms-3">
+                          <a className="text-decoration-none" href="#testimonial">
+                            Testimonial
+                          </a>
+                        </li>
+                        <li className="d-block ms-3">
+                          <a className="text-decoration-none" href="#contact">
+                            Contact
+                          </a>
+                        </li>
+                      </ul>
+                      <button
+                        className="ms-4 btn rounded border-2 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
+                        onClick={() => setState({ isOpen: true })}>
+                        Join Tech-a-break
+                      </button>
+                    </div>
+                    <div className="d-block d-md-none">
+                      <button
+                        className="btn bg-transparent fs-4 text-primary"
+                        onClick={() => setState({ isMenuOpen: !isMenuOpen })}
+                        style={{ width: '46px', height: '46px' }}>
+                        {isMenuOpen ? <span>×</span> : <span>☰</span>}
+                      </button>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
         <div id="top" className="top-bar py-2 shadow-sm d-none">
           <div className="container">
             <div className="row">
@@ -78,22 +141,31 @@ export default function Home() {
           </div>
         </div>
         <section id="content">
-          <div id="hero" className="p-3 py-5">
+          <div id="hero" className="p-3 py-md-5">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-12 col-md-12 col-lg-10">
                   <div className="py-3 py-md-5 text-light">
                     <div className="py-3 py-md-5">
-                      <h2 className="text-primary fs-5">Hi, my name is</h2>
-                      <h1 className="display-3 text-warning mb-1" style={{ fontWeight: '900' }}>
+                      <h2 className="text-primary fs-6">
+                        <span className="me-2" role="emoji">
+                          👋🏻
+                        </span>{' '}
+                        Hi, my name is
+                      </h2>
+                      <h1 className="display-3 text-warning fw-bold" style={{ fontWeight: '900' }}>
                         Ervandra Halim.
                       </h1>
-                      <h3 className="mb-5 fw-bold">{profile.mission}.</h3>
+                      <h3 className="mb-3 mb-md-5 fw-bold">{profile.mission}.</h3>
                       {/* <h2 className="mb-5 display-4 fw-bold">I build anything for the web.</h2> */}
                       {/* <h2 className="mb-5 fs-6">using technology for the human future</h2> */}
                       <div className="row">
-                        <div className="col-12 col-md-7">
-                          <p className="mb-5">{profile.intro}</p>
+                        <div className="col-12 col-md-8">
+                          <p className="mb-5">
+                            Get my thoughts twice a month in a bite size tech news called the{' '}
+                            <strong className="text-primary">Tech-a-break</strong>, where i cover
+                            about latest technologies, programming tips and modern business.
+                          </p>
                         </div>
                       </div>
 
@@ -101,7 +173,7 @@ export default function Home() {
                         <button
                           className="btn btn-outline-success shadow border-2 fw-bold btn-lg fs-6"
                           onClick={() => setState({ isOpen: true })}>
-                          Claim Free Web Apps Starter
+                          Join Tech-a-break
                         </button>
                       </div>
                     </div>
@@ -111,7 +183,7 @@ export default function Home() {
                       contentLabel="Modal"
                       className="reveal p-3 center small"
                       ariaHideApp={false}>
-                      <div className="p-3">
+                      <div className="p-3 pt-4">
                         {success ? (
                           <div className="p-0 text-center">
                             <h3 className="mb-3">Success</h3>
@@ -119,13 +191,11 @@ export default function Home() {
                           </div>
                         ) : (
                           <form onSubmit={handleSubmit} className="px-0 px-md-3">
-                            <h4 className="text-center mb-3 fw-bold">
+                            <h5 className="text-center mb-4 fw-bold">
                               Fill out form below and{' '}
-                              <strong className="text-success">
-                                Claim Your Free Web Apps Starter
-                              </strong>{' '}
+                              <strong className="text-success">Claim Your Free Tech-a-break</strong>{' '}
                               Now.
-                            </h4>
+                            </h5>
                             <div className="form-group mb-3">
                               <input
                                 type="text"
@@ -156,8 +226,8 @@ export default function Home() {
                             ) : (
                               <button
                                 type="submit"
-                                className="btn fs-6 fs-md-5 py-3 btn-success text-uppercase fw-bold shadow w-100">
-                                Claim Free Web Apps Starter
+                                className="btn fs-6 btn-success text-uppercase fw-bold shadow w-100">
+                                Claim Free Tech-a-break
                               </button>
                             )}
                             <p className="mb-0 text-muted text-center mt-4">
@@ -220,7 +290,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="about-me" className="p-3 py-5">
+          <div id="about" className="p-3 py-5">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-12 col-lg-10">
@@ -238,22 +308,22 @@ export default function Home() {
                           />
                         </div>
                       </div>
-                      <div className="col-12 col-md-6">
-                        <h2 className="fw-bold mb-4">About Me</h2>
+                      <div className="col-12 col-md-7">
+                        <h2 className="fw-bold mb-4 fs-1">🧑🏻‍💻 About Me</h2>
                         <p>
-                          Hello! I'm Ervandra, a software engineer based in Jakarta, Indonesia who
-                          enjoys building things that live on the internet. I develop exceptional
-                          websites and web apps that provide intuitive, pixel-perfect user
-                          interfaces with efficient and modern backends.
+                          As a software engineer who enjoys crafting things that live on the
+                          internet. I develop exceptional websites and web apps that provide
+                          intuitive, pixel-perfect user interfaces with efficient and modern
+                          infrastructures.
                         </p>
                         <p>
-                          Currently, I'm a Senior Software Engineer, Web at{' '}
+                          Currently, I'm a Senior Software Engineer, Web Platforms at{' '}
                           <a
                             href="https://www.rga.com"
                             target="_blank"
                             className="fw-bold"
                             rel="noopener noreferrer">
-                            R/GA!
+                            R/GA
                           </a>
                         </p>
                         <p>Here are a few technologies I've been working with recently:</p>
@@ -271,12 +341,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="workplace" className="p-3 py-5">
+          <div id="experience" className="p-3 py-5">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
-                    <h2 className="fw-bold mb-5">Where I've Contributing</h2>
+                    <h2 className="fw-bold mb-5 fs-1">🌟 Where I've Contributing</h2>
                     <div className="row">
                       <div className="col-12 col-md-3 col-lg-2">
                         <div
@@ -314,7 +384,10 @@ export default function Home() {
                             const active = index === workTab;
                             if (active)
                               return (
-                                <div className="tab-pane fade show active" role="tabpanel">
+                                <div
+                                  className="tab-pane fade show active"
+                                  role="tabpanel"
+                                  key={exp.company + index}>
                                   <div className="workplace-content">
                                     <h5 className="mb-1 fw-bold">
                                       {exp.title}{' '}
@@ -330,7 +403,7 @@ export default function Home() {
                                 </div>
                               );
                             return (
-                              <div className="tab-pane " role="tabpanel">
+                              <div className="tab-pane " role="tabpanel" key={exp.company + index}>
                                 <div className="workplace-content py-3">
                                   <h5 className="mb-1 fw-bold">
                                     {exp.title}{' '}
@@ -355,24 +428,22 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="recommended" className="py-5">
+          <div id="testimonial" className="py-5">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col">
                   <div className="py-3 py-md-5">
-                    <h2 className="mb-5 text-center">
-                      Why'd They Recommend <br />
-                      <strong className="text-warning">Work With Ervan?</strong>
-                    </h2>
+                    <h4 className="fs-4 mb-0 text-center">Why'd they recommend to</h4>
+                    <h2 className="fs-1 mb-5 text-center fw-bold text-warning">Work With Ervan?</h2>
                     <p className="fs-5 mb-5 text-center">
                       My partner and valuable clients will tell you their experiences to work with
                       me.
                     </p>
 
                     <div id="client-testimony">
-                      <div className="row">
-                        <div className="col-12 col-md-4">
-                          <div className="testimony-item">
+                      <div className="row justify-content-center">
+                        <div className="col-12 col-md-6 col-lg-4">
+                          <div className="testimony-item mb-3">
                             <div className="card  bg-transparent bg-gradient shadow-lg border-2  rounded-3">
                               <div className="card-body p-4">
                                 <div className="row align-items-center">
@@ -403,8 +474,8 @@ export default function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="col-12 col-md-4">
-                          <div className="testimony-item mt-4">
+                        <div className="col-12 col-md-6 col-lg-4">
+                          <div className="testimony-item mb-3 mt-0mt-lg-4">
                             <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
                               <div className="card-body p-4">
                                 <div className="row align-items-center">
@@ -433,8 +504,8 @@ export default function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="col-12 col-md-4">
-                          <div className="testimony-item">
+                        <div className="col-12 col-md-6 col-lg-4">
+                          <div className="testimony-item mb-3">
                             <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
                               <div className="card-body p-4">
                                 <div className="row align-items-center">
@@ -472,7 +543,89 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <div id="contact" className="py-5">
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-12 col-md-6">
+                  <div className="py-3 py-md-5">
+                    <div className="text-center">
+                      <h4 className="fs-4 mb-0">What's next?</h4>
+                      <h2 className="fs-1 mb-5 text-center text-warning fw-bold">Get In Touch</h2>
+                      <p className="mb-5 text-center">
+                        Although I'm not currently looking for any job opportunities, my inbox is
+                        always open. Whether for a potential project or just to say hi, I'll try my
+                        best to answer your email!
+                      </p>
+                      <a
+                        href="mailto:hi@ervandra.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-outline-primary border-2 fw-bold">
+                        <span role="emoji">👋🏻</span> Say Hello
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer id="footer" className="py-3 bg-dark">
+            <div className="container">
+              <div className="row">
+                <div className="col">
+                  <div className="text-center copyright">
+                    <p className="mb-0 small">
+                      &copy;2012-{new Date().getFullYear()}{' '}
+                      <strong>
+                        Ervandra Halim <span role="emoji">⚡️</span>
+                      </strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
         </section>
+        {isMenuOpen && (
+          <div className="menu-mobile-overlay" onClick={() => setState({ isMenuOpen: false })}>
+            &nbsp;
+          </div>
+        )}
+
+        <div id="menu-mobile" className={`${isMenuOpen ? 'active' : ''}`}>
+          <div className="">
+            <ul
+              className="m-0 p-0 d-block mb-5 fw-bold"
+              onClick={() => setState({ isMenuOpen: false })}>
+              <li className="d-block mb-4">
+                <a className="text-decoration-none" href="#about">
+                  About
+                </a>
+              </li>
+              <li className="d-block mb-4">
+                <a className="text-decoration-none" href="#experience">
+                  Experience
+                </a>
+              </li>
+              <li className="d-block mb-4">
+                <a className="text-decoration-none" href="#testimonial">
+                  Testimonial
+                </a>
+              </li>
+              <li className="d-block mb-4">
+                <a className="text-decoration-none" href="#contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <button
+              className="btn rounded border-2 w-100 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
+              onClick={() => setState({ isOpen: true })}>
+              Join Tech-a-break
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
