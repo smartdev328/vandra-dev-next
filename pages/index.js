@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import profile from '../config/profile';
@@ -16,9 +17,10 @@ export default function Home() {
     success: false,
     workTab: 0,
     isMenuOpen: false,
+    isReady: false,
   };
   const { state, setState } = useSetState(initialState);
-  const { isOpen, name, email, isLoading, isMenuOpen, success, workTab } = state;
+  const { isOpen, name, email, isLoading, isMenuOpen, success, workTab, isReady } = state;
   const handleSubmit = async e => {
     e.preventDefault();
     setState({ isLoading: true, isError: false, success: false });
@@ -40,6 +42,11 @@ export default function Home() {
       })
       .finally(() => setState({ isLoading: false }));
   };
+  useEffect(() => {
+    setTimeout(() => {
+      setState({ isReady: true });
+    }, 100);
+  }, []);
   return (
     <div>
       <Head>
@@ -66,11 +73,11 @@ export default function Home() {
         <meta property="og:title" content={`${profile.name} - ${profile.mission}`} key="ogtitle" />
         <meta property="og:description" content={profile.intro} key="ogdesc" />
       </Head>
-      <div id="app-container">
+      <div id="app-container" className={`${isReady ? 'is-ready' : ''}`}>
         <header
           id="header"
           className={`${isMenuOpen ? '' : 'sticky-top'} shadow py-2`}
-          style={{ backdropFilter: 'blur(2px)', background: '#15232dcc' }}>
+          style={{ backdropFilter: 'blur(2px)' }}>
           <div className="container">
             <div className="col">
               <div className="col-12">
