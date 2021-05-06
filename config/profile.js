@@ -1,7 +1,7 @@
 const profile = {
   name: 'Ervandra Halim',
   title: 'Software Engineer',
-  mission: "I'm Crafting Technology For A More Human Future",
+  mission: 'Combining Technology & Creativity For A Greater Impact',
   email: 'hi@ervandra.com',
   phone: '+6287708770800',
   photo: 'https://www.ervandra.com/wp-content/uploads/2020/12/ervan-round.png',

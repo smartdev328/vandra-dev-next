@@ -56,15 +56,7 @@ export default function Home() {
         <meta name="author" content={profile.name} />
         <meta name="twitter:card" content="summary" key="twcard" />
         <meta name="twitter:creator" content="@ervandracom" key="twhandle" />
-        <meta
-          property="og:image"
-          content={
-            profile.cover !== ''
-              ? profile.cover
-              : `https://via.placeholder.com/1200x628/${profile.color}/FFFFFF?text=Resume:+${profile.name}+-+${profile.title}`
-          }
-          key="ogimage"
-        />
+        <meta property="og:image" content="/images/cover.png" key="ogimage" />
         <meta
           property="og:site_name"
           content={`${profile.name} | ${profile.mission}`}
@@ -163,7 +155,7 @@ export default function Home() {
                       <h1 className="display-3 text-warning fw-bold" style={{ fontWeight: '900' }}>
                         Ervandra Halim.
                       </h1>
-                      <h3 className="mb-3 mb-md-5 fw-bold">{profile.mission}.</h3>
+                      <h3 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h3>
                       {/* <h2 className="mb-5 display-4 fw-bold">I build anything for the web.</h2> */}
                       {/* <h2 className="mb-5 fs-6">using technology for the human future</h2> */}
                       <div className="row">
@@ -234,7 +226,7 @@ export default function Home() {
                               <button
                                 type="submit"
                                 className="btn fs-6 btn-success text-uppercase fw-bold shadow w-100">
-                                Claim Free Tech-a-break
+                                Join Tech-a-break
                               </button>
                             )}
                             <p className="mb-0 text-muted text-center mt-4">
@@ -306,12 +298,12 @@ export default function Home() {
                       <div className="col-12 col-md-3 order-md-2 text-center">
                         <div className="rounded-circle about-img img-thumbnail shadow-lg mb-3 mx-auto">
                           <Image
-                            src="/images/ervan.png"
+                            src="/images/ervan.jpg"
                             alt="Ervandra Halim"
                             width="300"
                             height="300"
                             layout="responsive"
-                            className=""
+                            className="rounded-circle"
                           />
                         </div>
                       </div>
@@ -357,7 +349,7 @@ export default function Home() {
                     <div className="row">
                       <div className="col-12 col-md-3 col-lg-2">
                         <div
-                          className="nav flex-md-column nav-pills me-0 me-md-5 mb-3 "
+                          className="nav flex-md-column nav-pills me-0 me-md-5 mb-3 experience-menu"
                           role="tablist"
                           aria-orientation="vertical">
                           {profile.experiences.map((exp, index) => {
@@ -602,6 +594,16 @@ export default function Home() {
 
         <div id="menu-mobile" className={`${isMenuOpen ? 'active' : ''}`}>
           <div className="">
+            <div
+              className="btn-container d-flex justify-content-end align-items-center p-2 mb-0"
+              style={{ margin: '-1em' }}>
+              <button
+                className="btn btn-transparent border-2 border-light text-light fs-4 p-0 text-center rounded-circle lh-1"
+                style={{ width: '40px', height: '40px' }}
+                onClick={() => setState({ isMenuOpen: false })}>
+                <span>×</span>
+              </button>
+            </div>
             <ul
               className="m-0 p-0 d-block mb-5 fw-bold"
               onClick={() => setState({ isMenuOpen: false })}>
