@@ -1,5 +1,7 @@
 # My personal website powered by Next.js, Vercel, Kirim.Email, Optimized!
 
+![](https://github.com/ervandra/ervandra.dev/workflows/CI/badge.svg)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
