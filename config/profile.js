@@ -38,6 +38,33 @@ const profile = {
     'https://github.com/ervandra',
     'https://youtube.com/c/ervandra',
   ],
+  socialLinks: [
+    {
+      id: 'github',
+      icon: 'github',
+      link: 'https://www.github.com/ervandra',
+    },
+    {
+      id: 'facebook',
+      icon: 'facebook',
+      link: 'https://www.facebook.com/ervandra.dev',
+    },
+    {
+      id: 'instagram',
+      icon: 'instagram',
+      link: 'https://www.instagram.com/ervandra.dev',
+    },
+    {
+      id: 'youtube',
+      icon: 'youtube',
+      link: 'https://www.youtube.com/c/ervandra',
+    },
+    {
+      id: 'linkedin',
+      icon: 'linkedin-in',
+      link: 'https://www.linkedin.com/in/ervandra',
+    },
+  ],
   experiences: [
     {
       title: 'Senior Software Engineer, Web Platforms',
@@ -107,6 +134,13 @@ const profile = {
   ],
   color: 'ae2b26',
   cover: 'https://i.imgur.com/i4NZURh.jpg',
+  recentSkills: [
+    'Javascript (ES6+)',
+    'HTML + CSS (SASS)',
+    'React.js (Next.js)',
+    'React Native',
+    'TypeScript',
+  ],
 };
 
 export default profile;

@@ -3,14 +3,14 @@ body {
     "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   background-color: #193549;
-  background-image: url(/images/bg-grid.png), url(/images/bg-dust.png);
+  background-image: url(/images/bg-grid.webp), url(/images/bg-dust.webp);
   background-size: 1200px, 900px, 200px;
   background-position: 0 0, 100% 100%, 50%;
   background-attachment: fixed, scroll, scroll;
   color: #fff;
   line-height: 1.5;
-  font-smooth: auto;
   -webkit-font-smoothing: antialiased;
+  font-smooth: auto;
 }
 
 h1,
@@ -96,6 +96,29 @@ img {
   }
 }
 
+#mainmenu {
+  ul {
+    li {
+      a {
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 1px;
+          opacity: 0.5;
+          background: transparent;
+          position: absolute;
+          bottom: -0.125em;
+          left: 0;
+          transition: all ease 0.6s;
+          transition-delay: 1s;
+        }
+      }
+    }
+  }
+}
+
 #menu-mobile {
   position: fixed;
   top: 0;
@@ -105,7 +128,7 @@ img {
   z-index: 5;
   transform: translateX(60vw);
   opacity: 0;
-  background: #15232dee url(/images/bg-dust.png) center repeat;
+  background: #15232dee url(/images/bg-dust.webp) center repeat;
   background-size: contain;
   padding: 1em;
   &.active {
@@ -125,7 +148,7 @@ img {
 
 #header,
 #footer {
-  background: #15232dee url(/images/bg-dust.png) center repeat;
+  background: #15232dee url(/images/bg-dust.webp) center repeat;
   background-size: contain;
 }
 #header {
@@ -139,6 +162,19 @@ img {
   &.is-ready {
     #menu-mobile {
       transition: all ease 0.6s;
+    }
+    #mainmenu {
+      ul {
+        li {
+          a {
+            &:after {
+              background: var(--bs-primary);
+              height: 1px;
+              width: 12px;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -204,14 +240,14 @@ img {
 .social-list {
   li {
     display: block;
+    transition: all ease 0.3s;
+    &:hover {
+      transform: translateY(-4px);
+    }
     a {
       display: block;
-      font-size: 1.25em;
+      font-size: 1.5em;
       padding: 0.25rem;
-      transition: all ease 0.3s;
-      &:hover {
-        transform: translateY(-4px);
-      }
     }
   }
 }
@@ -225,4 +261,16 @@ a[target="_blank"] {
   @media only screen and (max-width: 48em) {
     display: block;
   }
+}
+
+.workplace-content {
+  h6 {
+    @media only screen and (max-width: 40em) {
+      font-size: 0.875em;
+    }
+  }
+}
+
+.vh-90 {
+  min-height: 90vh;
 }
