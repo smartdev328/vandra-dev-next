@@ -160,6 +160,11 @@ img {
 
 #app-container {
   &.is-ready {
+    #hero {
+      background: url(/images/bg-hero.svg) no-repeat right top;
+      background-size: 66vmax auto;
+      background-attachment: scroll;
+    }
     #menu-mobile {
       transition: all ease 0.6s;
     }

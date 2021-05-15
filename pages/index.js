@@ -77,7 +77,7 @@ export default function Home() {
         id="app-container"
         className={`${isReady ? 'is-ready' : ''} ${isMenuOpen ? 'is-menu-open' : ''}`}>
         {/* <Image src="/images/bg-dust.png" layout="fixed" width="1920" height="1080" /> */}
-        <Bounce top duration={500}>
+        <Bounce top duration={100}>
           <header
             id="header"
             className={`${isMenuOpen ? '' : 'sticky-top'} shadow py-2`}
@@ -86,7 +86,7 @@ export default function Home() {
               <div className="row">
                 <div className="col-12">
                   <div className="d-flex align-items-center justify-content-between">
-                    <Zoom right duration={500}>
+                    <Zoom right duration={300}>
                       <div className="logo">
                         <Image
                           src="/images/logo.svg"
@@ -102,7 +102,7 @@ export default function Home() {
                       <div className="d-none d-md-flex justify-content-end align-items-center">
                         <ul className="m-0 d-flex">
                           <li className="d-block ms-4">
-                            <Fade left delay={500} duration={250}>
+                            <Fade left duration={100}>
                               <a className="text-decoration-none" href="#about">
                                 About
                               </a>
@@ -110,28 +110,28 @@ export default function Home() {
                           </li>
 
                           <li className="d-block ms-4">
-                            <Fade left delay={600} duration={250}>
+                            <Fade left delay={100} duration={100}>
                               <a className="text-decoration-none" href="#experience">
                                 Experience
                               </a>
                             </Fade>
                           </li>
                           <li className="d-block ms-4">
-                            <Fade left delay={800} duration={250}>
+                            <Fade left delay={200} duration={100}>
                               <a className="text-decoration-none" href="#testimonial">
                                 Testimonial
                               </a>
                             </Fade>
                           </li>
                           <li className="d-block ms-4">
-                            <Fade left delay={1000} duration={250}>
+                            <Fade left delay={300} duration={100}>
                               <a className="text-decoration-none" href="#contact">
                                 Contact
                               </a>
                             </Fade>
                           </li>
                         </ul>
-                        <Zoom delay={1250} duration={500}>
+                        <Zoom delay={300} duration={100}>
                           <button
                             className="ms-4 btn rounded border-2 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
                             onClick={() => setState({ isOpen: true })}>
@@ -140,7 +140,7 @@ export default function Home() {
                         </Zoom>
                       </div>
                       <div className="d-block d-md-none">
-                        <Zoom delay={1000}>
+                        <Zoom delay={300}>
                           <button
                             className="btn bg-transparent fs-4 text-primary"
                             onClick={() => setState({ isMenuOpen: !isMenuOpen })}
@@ -158,26 +158,13 @@ export default function Home() {
         </Bounce>
 
         <section id="content" className="px-3 px-md-0 position-relative overflow-hidden">
-          <div
-            style={{
-              width: '60vmax',
-              height: '60vmax',
-              position: 'absolute',
-              right: '-30vmax',
-              top: '-30vmax',
-              opacity: 0.05,
-            }}>
-            <Spin forever={true} duration={19000}>
-              <Image src="/images/bg-hero.svg" width="300" height="300" layout="responsive" />
-            </Spin>
-          </div>
           <div id="hero" className="py-3 py-md-5 vh-90">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-12 col-md-12 col-lg-10">
                   <div className="py-3 py-md-5 text-light">
                     <div className="py-3 py-md-5">
-                      <Fade duration={500}>
+                      <Fade duration={100}>
                         <h2 className="text-light fs-6">
                           <span className="me-2" role="emoji">
                             👋🏻
@@ -190,10 +177,10 @@ export default function Home() {
                           Ervandra Halim.
                         </Zoom>
                       </h1>
-                      <Fade delay={500} duration={500}>
+                      <Fade delay={100} duration={100}>
                         <h3 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h3>
                       </Fade>
-                      <Fade delay={500} duration={500}>
+                      <Fade delay={100} duration={100}>
                         <div className="row">
                           <div className="col-12 col-md-8">
                             <p className="mb-5">
@@ -206,7 +193,7 @@ export default function Home() {
                       </Fade>
 
                       <div className="button-container">
-                        <Zoom delay={1000} duration={500}>
+                        <Zoom delay={300} duration={100}>
                           <Pulse forever={true} delay={1500} duration={2000}>
                             <button
                               className="btn btn-outline-success shadow border-2 fw-bold btn-lg fs-6"
@@ -315,10 +302,10 @@ export default function Home() {
                         </Zoom>
                       </div>
                       <div className="col-12 col-md-7">
-                        <Zoom top duration={500}>
+                        <Zoom top duration={300}>
                           <h2 className="fw-bold mb-4 fs-1">🧑🏻‍💻 About Me</h2>
                         </Zoom>
-                        <Fade delay={500}>
+                        <Fade delay={300}>
                           <p>
                             As a software engineer who enjoys crafting things that live on the
                             internet. I develop exceptional websites and web apps that provide
@@ -340,7 +327,7 @@ export default function Home() {
                           <div className="d-flex flex-wrap">
                             {profile.recentSkills.map((skill, index) => (
                               <div key={skill + index} className="text-warning w-100 w-md-50">
-                                <Fade delay={index * 100 + 500}>
+                                <Fade delay={index * 100 + 300}>
                                   <div>
                                     <span className="me-1 fst-normal">✦</span> {skill}
                                   </div>
@@ -361,10 +348,10 @@ export default function Home() {
               <div className="row justify-content-center">
                 <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
-                    <Zoom top duration={500}>
+                    <Zoom top duration={300}>
                       <h2 className="fw-bold mb-5 fs-1">🌟 Where I've Contributing</h2>
                     </Zoom>
-                    <Fade duration={500}>
+                    <Fade duration={300}>
                       <div className="row">
                         <div className="col-12 col-md-3 col-lg-2">
                           <div
@@ -378,8 +365,8 @@ export default function Home() {
                                   <Zoom
                                     left
                                     key={exp.company + index}
-                                    delay={index * 200 + 500}
-                                    duration={500}>
+                                    delay={index * 200 + 300}
+                                    duration={300}>
                                     <button
                                       key={exp.company + index}
                                       className="nav-link rounded-0 text-nowrap text-start active bg-dark text-primary border-start border-2 border-success"
@@ -393,8 +380,8 @@ export default function Home() {
                                 <Zoom
                                   left
                                   key={exp.company + index}
-                                  delay={index * 200 + 500}
-                                  duration={500}>
+                                  delay={index * 200 + 300}
+                                  duration={300}>
                                   <button
                                     key={exp.company + index}
                                     className="nav-link rounded-0 text-nowrap text-start text-muted border-start border-2 border-secondary"
@@ -472,10 +459,10 @@ export default function Home() {
               <div className="row justify-content-center">
                 <div className="col">
                   <div className="py-3 py-md-5">
-                    <Fade cascade delay={500}>
+                    <Fade cascade delay={300}>
                       <h4 className="fs-4 mb-0 text-center">Why'd they recommend to</h4>
                       <h2 className="fs-1 mb-5 text-center fw-bold text-warning">
-                        <Zoom cascade top duration={500}>
+                        <Zoom cascade top duration={300}>
                           Work With Ervan?
                         </Zoom>
                       </h2>
@@ -487,7 +474,7 @@ export default function Home() {
                     <div id="client-testimony">
                       <div className="row justify-content-center">
                         <div className="col-12 col-md-6 col-lg-4">
-                          <Fade duration={500}>
+                          <Fade duration={300}>
                             <div className="testimony-item mb-3">
                               <div className="card  bg-transparent bg-gradient shadow-lg border-2  rounded-3">
                                 <div className="card-body p-4">
@@ -521,7 +508,7 @@ export default function Home() {
                           </Fade>
                         </div>
                         <div className="col-12 col-md-6 col-lg-4">
-                          <Fade duration={500}>
+                          <Fade duration={300}>
                             <div className="testimony-item mb-3 mt-0mt-lg-4">
                               <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
                                 <div className="card-body p-4">
@@ -555,7 +542,7 @@ export default function Home() {
                           </Fade>
                         </div>
                         <div className="col-12 col-md-6 col-lg-4">
-                          <Fade duration={500}>
+                          <Fade duration={300}>
                             <div className="testimony-item mb-3">
                               <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
                                 <div className="card-body p-4">
@@ -605,7 +592,7 @@ export default function Home() {
                     <div className="text-center">
                       <h4 className="fs-4 mb-0">What's next?</h4>
                       <h2 className="fs-1 mb-5 text-center text-warning fw-bold">
-                        <Zoom cascade top duration={500}>
+                        <Zoom cascade top duration={300}>
                           Get In Touch
                         </Zoom>
                       </h2>
@@ -614,7 +601,7 @@ export default function Home() {
                         always open. Whether for a potential project or just to say hi, I'll try my
                         best to answer your email!
                       </p>
-                      <Zoom delay={500} duration={500}>
+                      <Zoom delay={300} duration={300}>
                         <a
                           href="mailto:hi@ervandra.com"
                           target="_blank"
@@ -668,11 +655,11 @@ export default function Home() {
         </footer>
 
         <div className="side-elements left" orientation="left">
-          <Bounce left delay={1000}>
+          <Bounce left delay={300} duration={300}>
             <ul className="social-list side-element-item">
               {profile.socialLinks.map((social, index) => (
                 <li key={social + index}>
-                  <Fade delay={index * 200 + 2000} duration={500}>
+                  <Fade delay={index * 200 + 300} duration={300}>
                     <a href={`${social.link}`} target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={['fab', social.icon]} />
                     </a>
@@ -684,10 +671,10 @@ export default function Home() {
         </div>
 
         <div className="side-elements right" orientation="right">
-          <Bounce right delay={1000}>
+          <Bounce right delay={300} duration={300}>
             <div className="email-link side-element-item">
               <a href="mailto:hi@ervandra.com" target="_blank" rel="noopener noreferrer">
-                <Zoom top cascade delay={2000} duration={500}>
+                <Zoom top cascade delay={300} duration={300}>
                   hi@ervandra.com
                 </Zoom>
               </a>
