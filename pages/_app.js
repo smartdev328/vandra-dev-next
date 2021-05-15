@@ -22,6 +22,20 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          href="/fonts/OperatorMonoBook.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/OperatorMonoBold.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
         <link href="/fonts/OperatorMono/fontface.css" rel="stylesheet" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://www.facebook.com" />

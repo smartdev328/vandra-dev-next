@@ -1,27 +1,11 @@
 @font-face {
   font-family: "OperatorMono";
-  src: url("./OperatorMonoLight.eot");
-  src: url("./OperatorMonoLight.eot") format("embedded-opentype"), url("./OperatorMonoLight.woff2") format("woff2"),
-    url("./OperatorMonoLight.woff") format("woff"), url("./OperatorMonoLight.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "OperatorMono";
-  src: url("./OperatorMonoLightItalic.eot");
-  src: url("./OperatorMonoLightItalic.eot") format("embedded-opentype"),
-    url("./OperatorMonoLightItalic.woff2") format("woff2"), url("./OperatorMonoLightItalic.woff") format("woff"),
-    url("./OperatorMonoLightItalic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: "OperatorMono";
   src: url("./OperatorMonoBook.eot");
   src: url("./OperatorMonoBook.eot") format("embedded-opentype"), url("./OperatorMonoBook.woff2") format("woff2"),
     url("./OperatorMonoBook.woff") format("woff"), url("./OperatorMonoBook.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "OperatorMono";
@@ -31,6 +15,7 @@
     url("./OperatorMonoBookItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -40,6 +25,7 @@
     url("./OperatorMonoBold.woff") format("woff"), url("./OperatorMonoBold.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "OperatorMono";
@@ -49,4 +35,5 @@
     url("./OperatorMonoBoldItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
+  font-display: swap;
 }
