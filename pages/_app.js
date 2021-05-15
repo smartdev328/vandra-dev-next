@@ -23,6 +23,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="/fonts/OperatorMono/fontface.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
       </Head>
       <Component {...pageProps} />
     </>
