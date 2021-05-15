@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import Head from 'next/head';
-import TagManager from 'react-gtm-module';
+// import TagManager from 'react-gtm-module';
 import '../styles/global.scss';
 import '../styles/app.scss';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -16,7 +16,7 @@ import {
 library.add(faGithub, faFacebook, faInstagram, faYoutube, faLinkedinIn);
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GTMID }), []);
+  // useEffect(() => TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GTMID }), []);
   return (
     <>
       <Head>
@@ -37,8 +37,8 @@ function MyApp({ Component, pageProps }) {
           crossorigin
         />
         <link href="/fonts/OperatorMono/fontface.css" rel="stylesheet" />
-        <link rel="preconnect" href="https://connect.facebook.net" />
-        <link rel="preconnect" href="https://www.facebook.com" />
+        {/* <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://www.facebook.com" /> */}
       </Head>
       <Component {...pageProps} />
     </>
