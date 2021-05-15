@@ -4,6 +4,15 @@ import Image from 'next/image';
 import profile from '../config/profile';
 import Modal from 'react-modal';
 import { useSetState } from '@ervandra/use-setstate';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faFacebook,
+  faInstagram,
+  faYoutube,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
 
 import { subscribeForm } from '../libs/apis';
 
@@ -65,13 +74,15 @@ export default function Home() {
         <meta property="og:title" content={`${profile.name} - ${profile.mission}`} key="ogtitle" />
         <meta property="og:description" content={profile.intro} key="ogdesc" />
       </Head>
-      <div id="app-container" className={`${isReady ? 'is-ready' : ''}`}>
+      <div
+        id="app-container"
+        className={`${isReady ? 'is-ready' : ''} ${isMenuOpen ? 'is-menu-open' : ''}`}>
         <header
           id="header"
           className={`${isMenuOpen ? '' : 'sticky-top'} shadow py-2`}
           style={{ backdropFilter: 'blur(2px)' }}>
-          <div className="container">
-            <div className="col">
+          <div className="container-fluid">
+            <div className="row">
               <div className="col-12">
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="logo">
@@ -569,23 +580,115 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <footer id="footer" className="py-3 bg-dark">
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div className="text-center copyright">
-                    <p className="mb-0 small">
-                      &copy;2012-{new Date().getFullYear()}{' '}
-                      <strong>
-                        Ervandra Halim <span role="emoji">⚡️</span>
-                      </strong>
-                    </p>
-                  </div>
+        </section>
+        <footer id="footer" className="py-3 bg-dark">
+          <div className="container">
+            <div className="row">
+              <div className="col">
+                <div className="social-footer">
+                  <ul className="social-list m-0 p-0 d-flex justify-content-center py-2 mb-3">
+                    <li className="d-block px-3">
+                      <a
+                        href="https://www.github.com/ervandra"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faGithub} />
+                      </a>
+                    </li>
+                    <li className="d-block px-3">
+                      <a
+                        href="https://www.facebook.com/ervandra.dev"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faFacebook} />
+                      </a>
+                    </li>
+                    <li className="d-block px-3">
+                      <a
+                        href="https://www.instagram.com/ervandra.dev"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faInstagram} />
+                      </a>
+                    </li>
+                    <li className="d-block px-3">
+                      <a
+                        href="https://www.youtube.com/c/ervandra"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faYoutube} />
+                      </a>
+                    </li>
+                    <li className="d-block px-3">
+                      <a
+                        href="https://www.linkedin.com/in/ervandra"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faLinkedinIn} />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-center copyright">
+                  <p className="mb-0 small">
+                    &copy;2012-{new Date().getFullYear()}{' '}
+                    <strong>
+                      Ervandra Halim <span role="emoji">⚡️</span>
+                    </strong>
+                  </p>
                 </div>
               </div>
             </div>
-          </footer>
-        </section>
+          </div>
+        </footer>
+        <div className="side-elements left" orientation="left">
+          <ul className="social-list side-element-item">
+            <li>
+              <a href="https://www.github.com/ervandra" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/ervandra.dev"
+                target="_blank"
+                rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/ervandra.dev"
+                target="_blank"
+                rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/c/ervandra"
+                target="_blank"
+                rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faYoutube} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ervandra"
+                target="_blank"
+                rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="side-elements right" orientation="right">
+          <div className="email-link side-element-item">
+            <a href="mailto:hi@ervandra.com" target="_blank" rel="noopener noreferrer">
+              hi@ervandra.com
+            </a>
+          </div>
+        </div>
         {isMenuOpen && (
           <div className="menu-mobile-overlay" onClick={() => setState({ isMenuOpen: false })}>
             &nbsp;
@@ -598,10 +701,12 @@ export default function Home() {
               className="btn-container d-flex justify-content-end align-items-center p-2 mb-0"
               style={{ margin: '-1em' }}>
               <button
-                className="btn btn-transparent border-2 border-light text-light fs-4 p-0 text-center rounded-circle lh-1"
+                className="btn btn-transparent border-2 border-light text-light fs-6 p-0 text-center rounded-circle lh-1"
                 style={{ width: '40px', height: '40px' }}
                 onClick={() => setState({ isMenuOpen: false })}>
-                <span>×</span>
+                <span>
+                  <FontAwesomeIcon icon={faTimes} />
+                </span>
               </button>
             </div>
             <ul
