@@ -178,7 +178,7 @@ export default function Home() {
                         </Zoom>
                       </h1>
                       <Fade delay={100} duration={100}>
-                        <h3 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h3>
+                        <h2 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h2>
                       </Fade>
                       <Fade delay={100} duration={100}>
                         <div className="row">
@@ -406,11 +406,13 @@ export default function Home() {
                                     role="tabpanel"
                                     key={exp.company + index}>
                                     <div className="workplace-content">
-                                      <h5 className="mb-1 fw-bold">
+                                      <h3 className="mb-1 fw-bold fs-5">
                                         {exp.title}{' '}
                                         <span className="text-primary">@ {exp.company}</span>
-                                      </h5>
-                                      <h6 className="text-muted small mb-3">{exp.year}</h6>
+                                      </h3>
+                                      <h4 className="text-muted fs-6 mb-3">
+                                        <small>{exp.year}</small>
+                                      </h4>
                                       <Fade cascade>
                                         <div className="job-desc">
                                           {exp.summary.map((sum, idx) => (
@@ -430,11 +432,13 @@ export default function Home() {
                                   role="tabpanel"
                                   key={exp.company + index}>
                                   <div className="workplace-content py-3">
-                                    <h5 className="mb-1 fw-bold">
+                                    <h3 className="mb-1 fw-bold fs-5">
                                       {exp.title}{' '}
                                       <span className="text-primary">@ {exp.company}</span>
-                                    </h5>
-                                    <h6 className="text-muted small mb-3">{exp.year}</h6>
+                                    </h3>
+                                    <h4 className="text-muted fs-6 mb-3">
+                                      <small>{exp.year}</small>
+                                    </h4>
                                     <ul className="fst-italic">
                                       {exp.summary.map((sum, idx) => (
                                         <li key={sum + idx}>{sum}</li>
@@ -487,10 +491,12 @@ export default function Home() {
                                       />
                                     </div>
                                     <div className="col-9">
-                                      <h6 className="mb-1 fw-bold">Donny Riantori</h6>
-                                      <h6 className="small mb-0">
-                                        Co-founder & CTO - Gomodo Technologies Pte Ltd
-                                      </h6>
+                                      <h3 className="mb-1 fs-6 fw-bold">Donny Riantori</h3>
+                                      <h4 className=" mb-0 fs-6">
+                                        <small>
+                                          Co-founder & CTO - Gomodo Technologies Pte Ltd
+                                        </small>
+                                      </h4>
                                     </div>
                                   </div>
                                   <p className="lh-2 small mb-0 mt-3">
@@ -521,10 +527,10 @@ export default function Home() {
                                       />
                                     </div>
                                     <div className="col-9">
-                                      <h6 className="mb-1 fw-bold">Erick Liemarga</h6>
-                                      <h6 className="small mb-0">
-                                        Chief Product Officer - LABABOOK
-                                      </h6>
+                                      <h3 className="mb-1 fs-6 fw-bold">Erick Liemarga</h3>
+                                      <h4 className="fs-6 mb-0">
+                                        <small>Chief Product Officer - LABABOOK</small>
+                                      </h4>
                                     </div>
                                   </div>
                                   <p className="lh-2 small mb-0 mt-3">
@@ -555,10 +561,12 @@ export default function Home() {
                                       />
                                     </div>
                                     <div className="col-9">
-                                      <h6 className="mb-1 fw-bold">Jussi Hurmola</h6>
-                                      <h6 className="small mb-0">
-                                        Chief Executive Office - LifeLearn Holdings Pte Ltd
-                                      </h6>
+                                      <h3 className="mb-1 fs-6 fw-bold">Jussi Hurmola</h3>
+                                      <h4 className="fs-6 mb-0">
+                                        <small>
+                                          Chief Executive Office - LifeLearn Holdings Pte Ltd
+                                        </small>
+                                      </h4>
                                     </div>
                                   </div>
                                   <p className="lh-2 small mb-0 mt-3">
@@ -607,7 +615,7 @@ export default function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-outline-primary border-2 fw-bold">
-                          <span role="emoji">👋🏻</span> Say Hello
+                          <span>👋🏻</span> Say Hello
                         </a>
                       </Zoom>
                     </div>
@@ -626,7 +634,11 @@ export default function Home() {
                     {profile.socialLinks.map((social, index) => (
                       <li className="d-block px-3" key={social + index}>
                         <Fade delay={index * 200} duration={500}>
-                          <a href={`${social.link}`} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={`${social.link}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={social.id}>
                             <FontAwesomeIcon icon={['fab', social.icon]} />
                           </a>
                         </Fade>
@@ -641,9 +653,7 @@ export default function Home() {
                       <strong className="d-flex align-items-center justify-content-center mx-2">
                         Ervandra Halim{' '}
                         <Flash delay={1000}>
-                          <span className="ms-1" role="emoji">
-                            ⚡️
-                          </span>
+                          <span className="ms-1">⚡️</span>
                         </Flash>
                       </strong>
                     </p>
@@ -660,7 +670,11 @@ export default function Home() {
               {profile.socialLinks.map((social, index) => (
                 <li key={social + index}>
                   <Fade delay={index * 200 + 300} duration={300}>
-                    <a href={`${social.link}`} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={`${social.link}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={social.id}>
                       <FontAwesomeIcon icon={['fab', social.icon]} />
                     </a>
                   </Fade>
@@ -694,6 +708,7 @@ export default function Home() {
               className="btn-container d-flex justify-content-end align-items-center p-2 mb-0"
               style={{ margin: '-1em' }}>
               <button
+                aria-label="Close"
                 className="btn btn-transparent border-2 border-light text-light fs-6 p-0 text-center rounded-circle lh-1"
                 style={{ width: '40px', height: '40px' }}
                 onClick={() => setState({ isMenuOpen: false })}>
@@ -729,7 +744,7 @@ export default function Home() {
             <button
               className="btn rounded border-2 w-100 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
               onClick={() => setState({ isOpen: true })}>
-              Join Tech-a-break <span role="emoji">⚡️</span>
+              Join Tech-a-break <span>⚡️</span>
             </button>
           </div>
         </div>
