@@ -11,7 +11,6 @@ import Zoom from 'react-reveal/Zoom';
 import Pulse from 'react-reveal/Pulse';
 import Flash from 'react-reveal/Flash';
 import Bounce from 'react-reveal/Bounce';
-import Spin from 'react-reveal/Spin';
 
 import { subscribeForm } from '../libs/apis';
 
@@ -72,6 +71,7 @@ export default function Home() {
         />
         <meta property="og:title" content={`${profile.name} - ${profile.mission}`} key="ogtitle" />
         <meta property="og:description" content={profile.intro} key="ogdesc" />
+        <meta name="description" content={profile.intro} key="sitedesc" />
       </Head>
       <div
         id="app-container"
