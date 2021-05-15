@@ -482,15 +482,20 @@ export default function Home() {
                             <div className="testimony-item mb-3">
                               <div className="card  bg-transparent bg-gradient shadow-lg border-2  rounded-3">
                                 <div className="card-body p-4">
-                                  <div className="row align-items-center">
-                                    <div className="col-3">
-                                      <img
+                                  <div className="d-flex align-items-center">
+                                    <div
+                                      className="img-thumbnail rounded-circle me-3"
+                                      style={{ width: '72px', flexBasis: '72px', flexShrink: 0 }}>
+                                      <Image
                                         src="/images/testimonials/donny-riantori.jpg"
-                                        alt=""
-                                        className="img-thumbnail rounded-circle"
+                                        alt="Donny Riantori"
+                                        width="72"
+                                        height="72"
+                                        layout="responsive"
+                                        className="rounded-circle"
                                       />
                                     </div>
-                                    <div className="col-9">
+                                    <div className="flex-auto">
                                       <h3 className="mb-1 fs-6 fw-bold">Donny Riantori</h3>
                                       <h4 className=" mb-0 fs-6">
                                         <small>
@@ -499,6 +504,7 @@ export default function Home() {
                                       </h4>
                                     </div>
                                   </div>
+
                                   <p className="lh-2 small mb-0 mt-3">
                                     <em>
                                       Ervandra is an extraordinary software engineer, he always
@@ -518,21 +524,27 @@ export default function Home() {
                             <div className="testimony-item mb-3 mt-0mt-lg-4">
                               <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
                                 <div className="card-body p-4">
-                                  <div className="row align-items-center">
-                                    <div className="col-3">
-                                      <img
+                                  <div className="d-flex align-items-center">
+                                    <div
+                                      className="img-thumbnail rounded-circle me-3"
+                                      style={{ width: '72px', flexBasis: '72px', flexShrink: 0 }}>
+                                      <Image
                                         src="/images/testimonials/erick-liemarga.jpg"
-                                        alt=""
-                                        className="img-thumbnail rounded-circle"
+                                        alt="Erick Liemarga"
+                                        width="72"
+                                        height="72"
+                                        layout="responsive"
+                                        className="rounded-circle"
                                       />
                                     </div>
-                                    <div className="col-9">
+                                    <div className="flex-auto">
                                       <h3 className="mb-1 fs-6 fw-bold">Erick Liemarga</h3>
                                       <h4 className="fs-6 mb-0">
                                         <small>Chief Product Officer - LABABOOK</small>
                                       </h4>
                                     </div>
                                   </div>
+
                                   <p className="lh-2 small mb-0 mt-3">
                                     <em>
                                       If you're looking for a versatile frontend web developer I'll
@@ -552,15 +564,20 @@ export default function Home() {
                             <div className="testimony-item mb-3">
                               <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
                                 <div className="card-body p-4">
-                                  <div className="row align-items-center">
-                                    <div className="col-3">
-                                      <img
+                                  <div className="d-flex align-items-center">
+                                    <div
+                                      className="img-thumbnail rounded-circle me-3"
+                                      style={{ width: '72px', flexBasis: '72px', flexShrink: 0 }}>
+                                      <Image
                                         src="/images/testimonials/jussi-hurmola.jpg"
-                                        alt=""
-                                        className="img-thumbnail rounded-circle"
+                                        alt="Jussi Hurmola"
+                                        width="72"
+                                        height="72"
+                                        layout="responsive"
+                                        className="rounded-circle"
                                       />
                                     </div>
-                                    <div className="col-9">
+                                    <div className="flex-auto">
                                       <h3 className="mb-1 fs-6 fw-bold">Jussi Hurmola</h3>
                                       <h4 className="fs-6 mb-0">
                                         <small>
@@ -569,6 +586,7 @@ export default function Home() {
                                       </h4>
                                     </div>
                                   </div>
+
                                   <p className="lh-2 small mb-0 mt-3">
                                     <em>
                                       Ervandra is a very special person for us. He always
@@ -721,31 +739,43 @@ export default function Home() {
               className="m-0 p-0 d-block mb-5 fw-bold"
               onClick={() => setState({ isMenuOpen: false })}>
               <li className="d-block mb-4">
-                <a className="text-decoration-none" href="#about">
-                  About
-                </a>
+                <Fade when={isMenuOpen} bottom delay={0} duration={300}>
+                  <a className="text-decoration-none d-block" href="#about">
+                    About
+                  </a>
+                </Fade>
               </li>
               <li className="d-block mb-4">
-                <a className="text-decoration-none" href="#experience">
-                  Experience
-                </a>
+                <Fade when={isMenuOpen} bottom delay={300} duration={300}>
+                  <a className="text-decoration-none d-block" href="#experience">
+                    Experience
+                  </a>
+                </Fade>
               </li>
               <li className="d-block mb-4">
-                <a className="text-decoration-none" href="#testimonial">
-                  Testimonial
-                </a>
+                <Fade when={isMenuOpen} bottom delay={600} duration={300}>
+                  <a className="text-decoration-none d-block" href="#testimonial">
+                    Testimonial
+                  </a>
+                </Fade>
               </li>
               <li className="d-block mb-4">
-                <a className="text-decoration-none" href="#contact">
-                  Contact
-                </a>
+                <Fade when={isMenuOpen} bottom delay={900} duration={300}>
+                  <a className="text-decoration-none d-block" href="#contact">
+                    Contact
+                  </a>
+                </Fade>
               </li>
             </ul>
-            <button
-              className="btn rounded border-2 w-100 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
-              onClick={() => setState({ isOpen: true })}>
-              Join Tech-a-break <span>⚡️</span>
-            </button>
+            <Zoom bottom when={isMenuOpen} delay={1200} duration={500}>
+              <Pulse forever={true} delay={1500} duration={2000}>
+                <button
+                  className="btn rounded border-2 w-100 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
+                  onClick={() => setState({ isOpen: true })}>
+                  Join Tech-a-break <span>⚡️</span>
+                </button>
+              </Pulse>
+            </Zoom>
           </div>
         </div>
       </div>
