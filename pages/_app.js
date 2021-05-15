@@ -24,14 +24,14 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="preload"
-          href="/fonts/OperatorMonoBook.woff2"
+          href="/fonts/OperatorMono/OperatorMonoBook.woff2"
           as="font"
           type="font/woff2"
           crossorigin
         />
         <link
           rel="preload"
-          href="/fonts/OperatorMonoBold.woff2"
+          href="/fonts/OperatorMono/OperatorMonoBold.woff2"
           as="font"
           type="font/woff2"
           crossorigin
