@@ -60,6 +60,7 @@ export default function Home() {
         <title>
           {profile.name} | {profile.mission}
         </title>
+        <meta name="description" content={profile.intro} key="sitedesc" />
         <meta name="author" content={profile.name} />
         <meta name="twitter:card" content="summary" key="twcard" />
         <meta name="twitter:creator" content="@ervandracom" key="twhandle" />
@@ -71,17 +72,15 @@ export default function Home() {
         />
         <meta property="og:title" content={`${profile.name} - ${profile.mission}`} key="ogtitle" />
         <meta property="og:description" content={profile.intro} key="ogdesc" />
-        <meta name="description" content={profile.intro} key="sitedesc" />
       </Head>
       <div
         id="app-container"
         className={`${isReady ? 'is-ready' : ''} ${isMenuOpen ? 'is-menu-open' : ''}`}>
-        {/* <Image src="/images/bg-dust.png" layout="fixed" width="1920" height="1080" /> */}
         <Bounce top duration={100}>
           <header
             id="header"
             className={`${isMenuOpen ? '' : 'sticky-top'} shadow py-2`}
-            style={{ backdropFilter: 'blur(2px)' }}>
+            style={{ backdropFilter: 'blur(5px)' }}>
             <div className="container-fluid">
               <div className="row">
                 <div className="col-12">

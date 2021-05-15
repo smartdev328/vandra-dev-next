@@ -27,14 +27,14 @@ function MyApp({ Component, pageProps }) {
           href="/fonts/OperatorMono/OperatorMonoBook.woff2"
           as="font"
           type="font/woff2"
-          crossorigin
+          crossOrigin="true"
         />
         <link
           rel="preload"
           href="/fonts/OperatorMono/OperatorMonoBold.woff2"
           as="font"
           type="font/woff2"
-          crossorigin
+          crossOrigin="true"
         />
         <link href="/fonts/OperatorMono/fontface.css" rel="stylesheet" />
         {/* <link rel="preconnect" href="https://connect.facebook.net" />
