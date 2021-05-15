@@ -1,6 +1,6 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import Head from 'next/head';
-// import TagManager from 'react-gtm-module';
+import TagManager from 'react-gtm-module';
 import '../styles/global.scss';
 import '../styles/app.scss';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -16,7 +16,7 @@ import {
 library.add(faGithub, faFacebook, faInstagram, faYoutube, faLinkedinIn);
 
 function MyApp({ Component, pageProps }) {
-  // useEffect(() => TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GTMID }), []);
+  useEffect(() => TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GTMID }), []);
   return (
     <>
       <Head>
