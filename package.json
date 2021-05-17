@@ -1,7 +1,7 @@
 {
   "name": "ervandra.dev",
   "description": "Personal website for ervandra.dev using Next.js, Vercel, Kirim.Email & Optimized",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Ervandra Halim <ervandra.halim@gmail.com>",
   "repository": {
