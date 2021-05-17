@@ -14,7 +14,8 @@
     "ervandra",
     "ervandra.dev",
     "vercel",
-    "kirim.email"
+    "kirim.email",
+    "reveal"
   ],
   "scripts": {
     "dev": "next dev",
