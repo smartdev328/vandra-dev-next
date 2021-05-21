@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link
+        {/* <link
           rel="preload"
           href="/fonts/OperatorMono/OperatorMonoBook.woff2"
           as="font"
@@ -36,9 +36,11 @@ function MyApp({ Component, pageProps }) {
           type="font/woff2"
           crossOrigin="true"
         />
-        <link href="/fonts/OperatorMono/fontface.css" rel="stylesheet" />
+        <link href="/fonts/OperatorMono/fontface.css" rel="stylesheet" /> */}
         {/* <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://www.facebook.com" /> */}
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"></link>
       </Head>
       <Component {...pageProps} />
     </>

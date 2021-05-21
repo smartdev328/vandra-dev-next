@@ -415,7 +415,7 @@ export default function Home() {
                                       <Fade cascade>
                                         <div className="job-desc">
                                           {exp.summary.map((sum, idx) => (
-                                            <h6 className="small my-3 d-flex" key={sum + idx}>
+                                            <h6 className="small fw-300 my-3 d-flex" key={sum + idx}>
                                               <span className="text-warning me-3">⌲</span>
                                               <span>{sum}</span>
                                             </h6>
@@ -479,7 +479,7 @@ export default function Home() {
                         <div className="col-12 col-md-6 col-lg-4">
                           <Fade duration={300}>
                             <div className="testimony-item mb-3">
-                              <div className="card  bg-transparent bg-gradient shadow-lg border-2  rounded-3">
+                              <div className="card bg-dust shadow-lg border-0  rounded-3">
                                 <div className="card-body p-4">
                                   <div className="d-flex align-items-center">
                                     <div
@@ -521,7 +521,7 @@ export default function Home() {
                         <div className="col-12 col-md-6 col-lg-4">
                           <Fade duration={300}>
                             <div className="testimony-item mb-3 mt-0mt-lg-4">
-                              <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
+                              <div className="card bg-dust shadow-lg border-0 rounded-3">
                                 <div className="card-body p-4">
                                   <div className="d-flex align-items-center">
                                     <div
@@ -561,7 +561,7 @@ export default function Home() {
                         <div className="col-12 col-md-6 col-lg-4">
                           <Fade duration={300}>
                             <div className="testimony-item mb-3">
-                              <div className="card bg-transparent bg-gradient shadow-lg border-2 rounded-3">
+                              <div className="card bg-dust shadow-lg border-0 rounded-3">
                                 <div className="card-body p-4">
                                   <div className="d-flex align-items-center">
                                     <div
@@ -632,7 +632,7 @@ export default function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-outline-primary border-2 fw-bold">
-                          <span>👋🏻</span> Say Hello
+                          <span className="me-2">👋🏻</span> Say Hello
                         </a>
                       </Zoom>
                     </div>
