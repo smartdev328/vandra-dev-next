@@ -14,9 +14,15 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 library.add(faGithub, faFacebook, faInstagram, faYoutube, faLinkedinIn);
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GTMID }), []);
+  const router = useRouter();
+  useEffect(() => {
+    if(!router.query.noscript) {
+      TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GTMID })
+    }
+  }, []);
   return (
     <>
       <Head>
