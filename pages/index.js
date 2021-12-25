@@ -81,10 +81,10 @@ export default function Home() {
             id="header"
             className={`${isMenuOpen ? '' : 'sticky-top'} shadow py-2`}
             style={{ backdropFilter: 'blur(5px)' }}>
-            <div className="container-fluid">
+            <div className="container-fluid container mx-auto">
               <div className="row">
                 <div className="col-12">
-                  <div className="d-flex align-items-center justify-content-between">
+                  <div className="d-flex align-items-center justify-content-between flex items-center justify-between">
                     <Zoom right duration={300}>
                       <div className="logo">
                         <Image
@@ -415,7 +415,9 @@ export default function Home() {
                                       <Fade cascade>
                                         <div className="job-desc">
                                           {exp.summary.map((sum, idx) => (
-                                            <h6 className="small fw-300 my-3 d-flex" key={sum + idx}>
+                                            <h6
+                                              className="small fw-300 my-3 d-flex"
+                                              key={sum + idx}>
                                               <span className="text-warning me-3">⌲</span>
                                               <span>{sum}</span>
                                             </h6>
