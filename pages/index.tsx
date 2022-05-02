@@ -4,8 +4,6 @@ import Image from 'next/image';
 import profile from '../config/profile';
 import Modal from 'react-modal';
 import { useSetState } from '@ervandra/use-setstate';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Pulse from 'react-reveal/Pulse';
@@ -26,6 +24,7 @@ export default function Home() {
     isMenuOpen: false,
     isReady: false,
   };
+
   const { state, setState } = useSetState(initialState);
   const { isOpen, name, email, isLoading, isMenuOpen, success, workTab, isReady } = state;
   const handleSubmit = async e => {
@@ -79,28 +78,28 @@ export default function Home() {
         <Bounce top duration={100}>
           <header
             id="header"
-            className={`${isMenuOpen ? '' : 'sticky-top'} shadow py-2`}
+            className={`${isMenuOpen ? '' : 'sticky top-0'} shadow py-4`}
             style={{ backdropFilter: 'blur(5px)' }}>
             <div className="container-fluid container mx-auto">
               <div className="row">
                 <div className="col-12">
-                  <div className="d-flex align-items-center justify-content-between flex items-center justify-between">
+                  <div className="flex items-center justify-between">
                     <Zoom right duration={300}>
-                      <div className="logo">
+                      <div className="logo text-black">
                         <Image
                           src="/images/logo.svg"
                           alt="Ervandra Halim"
                           width="48"
                           height="48"
                           layout="intrinsic"
-                          className="d-block"
+                          className="block"
                         />
                       </div>
                     </Zoom>
                     <nav id="mainmenu">
-                      <div className="d-none d-md-flex justify-content-end align-items-center">
-                        <ul className="m-0 d-flex">
-                          <li className="d-block ms-4">
+                      <div className="hidden md:flex justify-end items-center">
+                        <ul className="m-0 flex">
+                          <li className="block ml-4 md:ml-10">
                             <Fade left duration={100}>
                               <a className="text-decoration-none" href="#about">
                                 About
@@ -108,21 +107,21 @@ export default function Home() {
                             </Fade>
                           </li>
 
-                          <li className="d-block ms-4">
+                          <li className="block ml-4 md:ml-10">
                             <Fade left delay={100} duration={100}>
                               <a className="text-decoration-none" href="#experience">
                                 Experience
                               </a>
                             </Fade>
                           </li>
-                          <li className="d-block ms-4">
+                          <li className="block ml-4 md:ml-10">
                             <Fade left delay={200} duration={100}>
                               <a className="text-decoration-none" href="#testimonial">
                                 Testimonial
                               </a>
                             </Fade>
                           </li>
-                          <li className="d-block ms-4">
+                          <li className="block ml-4 md:ml-10">
                             <Fade left delay={300} duration={100}>
                               <a className="text-decoration-none" href="#contact">
                                 Contact
@@ -132,19 +131,19 @@ export default function Home() {
                         </ul>
                         <Zoom delay={300} duration={100}>
                           <button
-                            className="ms-4 btn rounded border-2 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
+                            className="ml-4 p-2 px-4 rounded bg-black text-white"
                             onClick={() => setState({ isOpen: true })}>
-                            Join Tech-a-break
+                            Download
                           </button>
                         </Zoom>
                       </div>
-                      <div className="d-block d-md-none">
+                      <div className="block md:hidden">
                         <Zoom delay={300}>
                           <button
                             className="btn bg-transparent fs-4 text-primary"
                             onClick={() => setState({ isMenuOpen: !isMenuOpen })}
                             style={{ width: '46px', height: '46px' }}>
-                            {isMenuOpen ? <span>×</span> : <span>☰</span>}
+                            {isMenuOpen ? <span>×</span> : <span className="ehicon-menu" />}
                           </button>
                         </Zoom>
                       </div>
@@ -156,163 +155,182 @@ export default function Home() {
           </header>
         </Bounce>
 
-        <section id="content" className="px-3 px-md-0 position-relative overflow-hidden">
-          <div id="hero" className="py-3 py-md-5 vh-90">
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-12 col-md-12 col-lg-10">
-                  <div className="py-3 py-md-5 text-light">
-                    <div className="py-3 py-md-5">
-                      <Fade duration={100}>
-                        <h2 className="text-light fs-6">
-                          <span className="me-2" role="emoji">
-                            👋🏻
-                          </span>{' '}
-                          Hi, my name is
-                        </h2>
-                      </Fade>
-                      <h1 className="display-3 text-warning fw-bold" style={{ fontWeight: '900' }}>
-                        <Zoom cascade top duration={500}>
-                          Ervandra Halim.
-                        </Zoom>
-                      </h1>
-                      <Fade delay={100} duration={100}>
-                        <h2 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h2>
-                      </Fade>
-                      <Fade delay={100} duration={100}>
-                        <div className="row">
-                          <div className="col-12 col-md-8">
-                            <p className="mb-5">
+        <section id="content" className="px-3 md:px-0 relative overflow-hidden -mt-[87px] ">
+          <div
+            id="hero"
+            className="py-4 md:py-10 bg-opacity-10 relative wide:min-h-screen min-h-[50vw] flex flex-col justify-center">
+            <div className="container mx-auto">
+              <div className="py-10 md:py-20 lg:w-1/2">
+                <div className="py-3 py-md-5">
+                  <Fade duration={100}>
+                    <h2 className="text-base text-gray-900 mb-4">
+                      <span
+                        className="mr-2 inline-block text-2xl animate-bounce relative"
+                        role="emoji">
+                        👋🏻
+                      </span>{' '}
+                      Hi, i am Ervandra Halim.
+                    </h2>
+                  </Fade>
+                  <h1 className="text-5xl xl:text-7xl font-extrabold mb-8">
+                    <Fade duration={500}>Software Engineer | Technology Expert</Fade>
+                  </h1>
+                  <Fade delay={100} duration={100}>
+                    {/* <h2 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h2> */}
+                    <h2 className="mb-4 font-normal text-lg text-gray-900">
+                      Are you looking for a technopreneur that can help you and your business to
+                      thrive in the modern digital world? Let me help you.
+                      {/* Delivering successful technology advancement to your business and comp any. */}
+                    </h2>
+                    {/* <h2 className="mb-3 mb-md-5 fs-4 fw-bold">
+                          Technology Enthusiast & Consultant
+                        </h2> */}
+                  </Fade>
+                  <Fade delay={100} duration={100}>
+                    <p className="mb-8 text-lg text-gray-900">
+                      Checkout my case study below to see if my workflow suited best for your team,
+                      or let's schedule a call.
+                    </p>
+                    {/* <p className="mb-3 fs-5">
+                             I help people, startup/company to achieve their business goal faster
+                              through technology-based solution.
+                            </p>
+                            <p className="mb-5 fs-5">
+                              I want to add value for you, download this case study below:
+                            </p> */}
+                    {/* <p className="mb-5">
                               Get my thoughts twice a month in a bite size tech news called the{' '}
                               <strong className="text-warning">Tech-a-break</strong>, where i cover
                               about latest technologies, programming tips and modern business.
-                            </p>
-                          </div>
-                        </div>
-                      </Fade>
+                            </p> */}
+                  </Fade>
 
-                      <div className="button-container">
-                        <Zoom delay={300} duration={100}>
-                          <Pulse forever={true} delay={1500} duration={2000}>
-                            <button
-                              className="btn btn-outline-success shadow border-2 fw-bold btn-lg fs-6"
-                              onClick={() => setState({ isOpen: true })}>
-                              Join Tech-a-break ⚡️
-                            </button>
-                          </Pulse>
-                        </Zoom>
+                  <div className="button-container">
+                    <Zoom delay={300} duration={100}>
+                      {/* <Pulse forever={true} delay={1500} duration={2000}> */}
+                      <div className="flex items-center">
+                        <input
+                          type="text"
+                          className="p-2 px-4 rounded border mr-2 max-w-xs flex-1 border-gray-500"
+                          placeholder="Enter your email"
+                        />
+                        <button
+                          className="btn btn-outline-success p-2 px-4 bg-black text-white rounded uppercase"
+                          onClick={() => setState({ isOpen: true })}>
+                          Send case study
+                        </button>
                       </div>
-                    </div>
-                    <Modal
-                      isOpen={isOpen}
-                      onRequestClose={() => setState({ isOpen: false })}
-                      contentLabel="Modal"
-                      className="reveal p-3 center small"
-                      ariaHideApp={false}>
-                      <div className="p-3 pt-4">
-                        {success ? (
-                          <div className="p-0 text-center">
-                            <h3 className="mb-3">Success</h3>
-                            <button className="btn btn-primary">Close</button>
-                          </div>
-                        ) : (
-                          <form onSubmit={handleSubmit} className="px-0 px-md-3">
-                            <Fade cascade top collapse delay={100}>
-                              <div>
-                                <h5 className="text-center mb-4 fw-bold">
-                                  Fill out form below and{' '}
-                                  <strong className="text-success">
-                                    Claim Your Free Tech-a-break
-                                  </strong>{' '}
-                                  Now.
-                                </h5>
-                                <div className="form-group mb-3">
-                                  <input
-                                    type="text"
-                                    className="form-control "
-                                    placeholder="Your Name:"
-                                    value={name}
-                                    disabled={isLoading}
-                                    onChange={e => setState({ name: e.target.value })}
-                                  />
-                                </div>
-                                <div className="form-group mb-4">
-                                  <input
-                                    type="email"
-                                    className="form-control "
-                                    placeholder="Your Email:"
-                                    required
-                                    disabled={isLoading}
-                                    value={email}
-                                    onChange={e => setState({ email: e.target.value })}
-                                  />
-                                </div>
-                                {isLoading ? (
-                                  <button
-                                    type="button"
-                                    className="btn btn-lg btn-secondary text-uppercase fw-bold shadow w-100 text-light">
-                                    Submitting..
-                                  </button>
-                                ) : (
-                                  <button
-                                    type="submit"
-                                    className="btn fs-6 btn-success text-uppercase fw-bold shadow w-100">
-                                    Join Tech-a-break <span role="emoji">⚡️</span>
-                                  </button>
-                                )}
-                                <p className="mb-0 text-muted text-center mt-4">
-                                  Your privacy is protected
-                                </p>
-                              </div>
-                            </Fade>
-                          </form>
-                        )}
-                      </div>
-
-                      <button
-                        className="btn btn-close close-reveal"
-                        onClick={() => setState({ isOpen: false })}>
-                        &times;
-                      </button>
-                    </Modal>
+                      {/* </Pulse> */}
+                    </Zoom>
                   </div>
                 </div>
+                <Modal
+                  isOpen={isOpen}
+                  onRequestClose={() => setState({ isOpen: false })}
+                  contentLabel="Modal"
+                  className="reveal p-3 center small"
+                  ariaHideApp={false}>
+                  <div className="p-3 pt-4">
+                    {success ? (
+                      <div className="p-0 text-center">
+                        <h3 className="mb-3">Success</h3>
+                        <button className="btn btn-primary">Close</button>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleSubmit} className="px-0 px-md-3">
+                        <Fade cascade top collapse delay={100}>
+                          <div>
+                            <h5 className="text-center mb-4 fw-bold">
+                              Fill out form below and{' '}
+                              <strong className="text-success">Claim Your Free Tech-a-break</strong>{' '}
+                              Now.
+                            </h5>
+                            <div className="form-group mb-3">
+                              <input
+                                type="text"
+                                className="form-control "
+                                placeholder="Your Name:"
+                                value={name}
+                                disabled={isLoading}
+                                onChange={e => setState({ name: e.target.value })}
+                              />
+                            </div>
+                            <div className="form-group mb-4">
+                              <input
+                                type="email"
+                                className="form-control "
+                                placeholder="Your Email:"
+                                required
+                                disabled={isLoading}
+                                value={email}
+                                onChange={e => setState({ email: e.target.value })}
+                              />
+                            </div>
+                            {isLoading ? (
+                              <button
+                                type="button"
+                                className="btn btn-lg btn-secondary text-uppercase fw-bold shadow w-100 text-light">
+                                Submitting..
+                              </button>
+                            ) : (
+                              <button
+                                type="submit"
+                                className="btn fs-6 btn-success text-uppercase fw-bold shadow w-100">
+                                Join Tech-a-break <span role="emoji">⚡️</span>
+                              </button>
+                            )}
+                            <p className="mb-0 text-muted text-center mt-4">
+                              Your privacy is protected
+                            </p>
+                          </div>
+                        </Fade>
+                      </form>
+                    )}
+                  </div>
+
+                  <button
+                    className="btn btn-close close-reveal"
+                    onClick={() => setState({ isOpen: false })}>
+                    &times;
+                  </button>
+                </Modal>
               </div>
             </div>
           </div>
-          <div id="about" className="p-3 py-5">
+          <div id="about" className="py-10 md:py-20">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
-                    <div className="row justify-content-between align-items-center">
-                      <div className="col-12 col-md-3 order-md-2 text-center">
+                    <div className="row justify-content-between align-items-center md:max-w-5xl mx-auto flex justify-between items-center">
+                      <div className="col-12 col-md-3 order-md-2 text-end md:w-3/12">
                         <Zoom right fraction={0.5}>
-                          <div className="rounded-circle about-img img-thumbnail shadow-lg mb-3 mx-auto">
+                          <div className="rounded-full mb-3 mx-auto">
                             <Image
-                              src="/images/ervan.jpg"
+                              src="/images/ervan.png"
                               alt="Ervandra Halim"
                               width="300"
                               height="300"
                               layout="responsive"
-                              className="rounded-circle"
+                              className="rounded-full"
                             />
                           </div>
                         </Zoom>
                       </div>
-                      <div className="col-12 col-md-7">
+                      <div className="col-12 col-md-7 md:w-8/12">
                         <Zoom top duration={300}>
-                          <h2 className="fw-bold mb-4 fs-1">🧑🏻‍💻 About Me</h2>
+                          <h2 className="font-bold mb-4 text-2xl md:text-4xl">🧑🏻‍💻 About Me</h2>
                         </Zoom>
                         <Fade delay={300}>
-                          <p>
-                            As a software engineer who enjoys crafting things that live on the
-                            internet. I develop exceptional websites and web apps that provide
-                            intuitive, pixel-perfect user interfaces with efficient and modern
-                            infrastructures.
+                          <p className="mb-4">
+                            As software engineer|technology expert who enjoys crafting things that
+                            live on heart of many people, i love to bring technology solution that
+                            are intersecting with creativity.
                           </p>
-                          <p>
-                            Currently, I'm a Senior Software Engineer, Web Platforms at{' '}
+
+                          <p className="mb-4">
+                            I'm happened to be a <span className="underline">Technology Lead</span>{' '}
+                            at{' '}
                             <a
                               href="https://www.rga.com"
                               target="_blank"
@@ -321,11 +339,12 @@ export default function Home() {
                               R/GA
                             </a>
                           </p>
+
                           <p>Here are a few technologies I've been working with recently:</p>
 
-                          <div className="d-flex flex-wrap">
+                          <div className="flex flex-wrap mb-4">
                             {profile.recentSkills.map((skill, index) => (
-                              <div key={skill + index} className="text-warning w-100 w-md-50">
+                              <div key={skill + index} className="text-warning w-full md:w-1/2">
                                 <Fade delay={index * 100 + 300}>
                                   <div>
                                     <span className="me-1 fst-normal">✦</span> {skill}
@@ -342,19 +361,21 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="experience" className="py-3 py-md-5">
+          <div id="experience" className="py-10 md:py-20">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
                     <Zoom top duration={300}>
-                      <h2 className="fw-bold mb-5 fs-1">🌟 Where I've Contributing</h2>
+                      <h2 className="font-bold mb-4 text-2xl md:text-4xl">
+                        🌟 Where I'm Contributing
+                      </h2>
                     </Zoom>
                     <Fade duration={300}>
-                      <div className="row">
-                        <div className="col-12 col-md-3 col-lg-2">
+                      <div className="row flex justify-between">
+                        <div className="col-12 col-md-3 col-lg-2 w-full md:w-1/4 lg:w-1/6">
                           <div
-                            className="nav flex-md-column nav-pills me-0 me-md-5 mb-3 experience-menu"
+                            className="nav flex-md-column nav-pills me-0 md:mb-8 mb-3 experience-menu md:flex-col flex w-full"
                             role="tablist"
                             aria-orientation="vertical">
                             {profile.experiences.map((exp, index) => {
@@ -368,7 +389,7 @@ export default function Home() {
                                     duration={300}>
                                     <button
                                       key={exp.company + index}
-                                      className="nav-link rounded-0 text-nowrap text-start active bg-dark text-primary border-start border-2 border-success"
+                                      className="nav-link text-left p-2 px-4 text-nowrap whitespace-nowrap active border-l-2 w-full border-l-black bg-black bg-opacity-10"
                                       type="button"
                                       role="tab">
                                       {exp.company}
@@ -383,7 +404,7 @@ export default function Home() {
                                   duration={300}>
                                   <button
                                     key={exp.company + index}
-                                    className="nav-link rounded-0 text-nowrap text-start text-muted border-start border-2 border-secondary"
+                                    className="nav-link text-left p-2 px-4 border-l-2 w-full whitespace-nowrap border-l-black hover:bg-black hover:bg-opacity-5"
                                     type="button"
                                     onClick={() => setState({ workTab: index })}
                                     role="tab">
@@ -394,27 +415,91 @@ export default function Home() {
                             })}
                           </div>
                         </div>
-                        <div className="col-12 col-md-9 col-lg-10">
+                        <div className="col-12 col-md-9 col-lg-10 w-full md:w-3/4 lg:w/5/6">
                           <div className="tab-content">
                             {profile.experiences.map((exp, index) => {
                               const active = index === workTab;
                               if (active)
                                 return (
                                   <div
-                                    className="tab-pane fade show active"
+                                    className="tab-pane fade show block active"
                                     role="tabpanel"
                                     key={exp.company + index}>
-                                    <div className="workplace-content">
+                                    {exp.promotion.map((work, idx) => {
+                                      if (idx === 0) {
+                                        return (
+                                          <div
+                                            className="workplace-content mb-8"
+                                            key={work.year + idx}>
+                                            <h3 className="mb-1 fw-bold fs-5">
+                                              {work.title}{' '}
+                                              <span className="text-primary">@ {exp.company}</span>
+                                            </h3>
+                                            <h4 className="text-muted fs-6 mb-3">
+                                              <small>{work.year}</small>
+                                            </h4>
+                                            <Fade cascade>
+                                              <div className="job-desc">
+                                                {work.summary.map((sum, idx) => (
+                                                  <h6
+                                                    className="small fw-300 my-3 d-flex"
+                                                    key={sum + idx}>
+                                                    <span className="text-warning text-red-900 mr-2">
+                                                      ⌲
+                                                    </span>
+                                                    <span>{sum}</span>
+                                                  </h6>
+                                                ))}
+                                              </div>
+                                            </Fade>
+                                          </div>
+                                        );
+                                      }
+                                      return (
+                                        <div
+                                          className="workplace-content mb-8"
+                                          key={work.year + idx}>
+                                          <h3 className="mb-1 fw-bold fs-5">
+                                            {work.title}{' '}
+                                            <span className="text-primary">@ {exp.company}</span>
+                                          </h3>
+                                          <h4 className="text-muted fs-6 mb-3">
+                                            <small>{work.year}</small>
+                                          </h4>
+                                          <Fade cascade>
+                                            <div className="job-desc hidden">
+                                              {work.summary.map((sum, idx) => (
+                                                <h6
+                                                  className="small fw-300 my-3 d-flex"
+                                                  key={sum + idx}>
+                                                  <span className="text-warning me-3">⌲</span>
+                                                  <span>{sum}</span>
+                                                </h6>
+                                              ))}
+                                            </div>
+                                          </Fade>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                );
+                              return (
+                                <div
+                                  className="tab-pane hidden"
+                                  role="tabpanel"
+                                  key={exp.company + index}>
+                                  {exp.promotion.map((work, idx) => (
+                                    <div className="workplace-content" key={work.year + idx}>
                                       <h3 className="mb-1 fw-bold fs-5">
-                                        {exp.title}{' '}
+                                        {work.title}{' '}
                                         <span className="text-primary">@ {exp.company}</span>
                                       </h3>
                                       <h4 className="text-muted fs-6 mb-3">
-                                        <small>{exp.year}</small>
+                                        <small>{work.year}</small>
                                       </h4>
                                       <Fade cascade>
                                         <div className="job-desc">
-                                          {exp.summary.map((sum, idx) => (
+                                          {work.summary.map((sum, idx) => (
                                             <h6
                                               className="small fw-300 my-3 d-flex"
                                               key={sum + idx}>
@@ -425,27 +510,7 @@ export default function Home() {
                                         </div>
                                       </Fade>
                                     </div>
-                                  </div>
-                                );
-                              return (
-                                <div
-                                  className="tab-pane "
-                                  role="tabpanel"
-                                  key={exp.company + index}>
-                                  <div className="workplace-content py-3">
-                                    <h3 className="mb-1 fw-bold fs-5">
-                                      {exp.title}{' '}
-                                      <span className="text-primary">@ {exp.company}</span>
-                                    </h3>
-                                    <h4 className="text-muted fs-6 mb-3">
-                                      <small>{exp.year}</small>
-                                    </h4>
-                                    <ul className="fst-italic">
-                                      {exp.summary.map((sum, idx) => (
-                                        <li key={sum + idx}>{sum}</li>
-                                      ))}
-                                    </ul>
-                                  </div>
+                                  ))}
                                 </div>
                               );
                             })}
@@ -459,14 +524,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="testimonial" className="py-5">
+          <div id="testimonial" className="py-10 md:py-20">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col">
                   <div className="py-3 py-md-5">
                     <Fade cascade delay={300}>
-                      <h4 className="fs-4 mb-0 text-center">Why'd they recommend to</h4>
-                      <h2 className="fs-1 mb-5 text-center fw-bold text-warning">
+                      <h4 className="text-xl md:text-2xl mb-0 text-center">
+                        Why'd they recommend to
+                      </h4>
+                      <h2 className="text-2xl md:text-4xl mb-8 text-center font-bold text-warning">
                         <Zoom cascade top duration={300}>
                           Work With Ervan?
                         </Zoom>
@@ -477,11 +544,11 @@ export default function Home() {
                       </p>
                     </Fade>
                     <div id="client-testimony">
-                      <div className="row justify-content-center">
-                        <div className="col-12 col-md-6 col-lg-4">
+                      <div className="row justify-content-center grid gap-10 grid-cols-1 md:grid-cols-3">
+                        <div className="col-12 ">
                           <Fade duration={300}>
                             <div className="testimony-item mb-3">
-                              <div className="card bg-dust shadow-lg border-0  rounded-3">
+                              <div className="card bg-black bg-opacity-50 filter backdrop-blur-lg shadow-lg border-0  rounded-3">
                                 <div className="card-body p-4">
                                   <div className="d-flex align-items-center">
                                     <div
@@ -523,7 +590,7 @@ export default function Home() {
                         <div className="col-12 col-md-6 col-lg-4">
                           <Fade duration={300}>
                             <div className="testimony-item mb-3 mt-0mt-lg-4">
-                              <div className="card bg-dust shadow-lg border-0 rounded-3">
+                              <div className="card bg-white bg-opacity-50 filter backdrop-blur-lg shadow-lg border-0 rounded-3">
                                 <div className="card-body p-4">
                                   <div className="d-flex align-items-center">
                                     <div
@@ -563,7 +630,7 @@ export default function Home() {
                         <div className="col-12 col-md-6 col-lg-4">
                           <Fade duration={300}>
                             <div className="testimony-item mb-3">
-                              <div className="card bg-dust shadow-lg border-0 rounded-3">
+                              <div className="card bg-white bg-opacity-50 filter backdrop-blur-lg shadow-lg border-0 rounded-3">
                                 <div className="card-body p-4">
                                   <div className="d-flex align-items-center">
                                     <div
@@ -651,14 +718,14 @@ export default function Home() {
                 <div className="social-footer">
                   <ul className="social-list m-0 p-0 d-flex justify-content-center py-2 mb-3">
                     {profile.socialLinks.map((social, index) => (
-                      <li className="d-block px-3" key={social + index}>
+                      <li className="block px-3" key={social.icon + index}>
                         <Fade delay={index * 200} duration={500}>
                           <a
                             href={`${social.link}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             title={social.id}>
-                            <FontAwesomeIcon icon={['fab', social.icon]} />
+                            <span className={`ehicon-${social.icon}`} />
                           </a>
                         </Fade>
                       </li>
@@ -683,18 +750,18 @@ export default function Home() {
           </div>
         </footer>
 
-        <div className="side-elements left" orientation="left">
+        <div className="side-elements left">
           <Bounce left delay={300} duration={300}>
             <ul className="social-list side-element-item">
               {profile.socialLinks.map((social, index) => (
-                <li key={social + index}>
+                <li key={social.icon + index}>
                   <Fade delay={index * 200 + 300} duration={300}>
                     <a
                       href={`${social.link}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       title={social.id}>
-                      <FontAwesomeIcon icon={['fab', social.icon]} />
+                      <span className={`ehicon-${social.icon}`} />
                     </a>
                   </Fade>
                 </li>
@@ -703,7 +770,7 @@ export default function Home() {
           </Bounce>
         </div>
 
-        <div className="side-elements right" orientation="right">
+        <div className="side-elements right">
           <Bounce right delay={300} duration={300}>
             <div className="email-link side-element-item">
               <a href="mailto:hi@ervandra.com" target="_blank" rel="noopener noreferrer">
@@ -731,38 +798,36 @@ export default function Home() {
                 className="btn btn-transparent border-2 border-light text-light fs-6 p-0 text-center rounded-circle lh-1"
                 style={{ width: '40px', height: '40px' }}
                 onClick={() => setState({ isMenuOpen: false })}>
-                <span>
-                  <FontAwesomeIcon icon={faTimes} />
-                </span>
+                <span className="ehicon-close" />
               </button>
             </div>
             <ul
-              className="m-0 p-0 d-block mb-5 fw-bold"
+              className="m-0 p-0 block mb-5 fw-bold"
               onClick={() => setState({ isMenuOpen: false })}>
-              <li className="d-block mb-4">
+              <li className="block mb-4">
                 <Fade when={isMenuOpen} bottom delay={0} duration={300}>
-                  <a className="text-decoration-none d-block" href="#about">
+                  <a className="text-decoration-none block" href="#about">
                     About
                   </a>
                 </Fade>
               </li>
-              <li className="d-block mb-4">
+              <li className="block mb-4">
                 <Fade when={isMenuOpen} bottom delay={300} duration={300}>
-                  <a className="text-decoration-none d-block" href="#experience">
+                  <a className="text-decoration-none block" href="#experience">
                     Experience
                   </a>
                 </Fade>
               </li>
-              <li className="d-block mb-4">
+              <li className="block mb-4">
                 <Fade when={isMenuOpen} bottom delay={600} duration={300}>
-                  <a className="text-decoration-none d-block" href="#testimonial">
+                  <a className="text-decoration-none block" href="#testimonial">
                     Testimonial
                   </a>
                 </Fade>
               </li>
-              <li className="d-block mb-4">
+              <li className="block mb-4">
                 <Fade when={isMenuOpen} bottom delay={900} duration={300}>
-                  <a className="text-decoration-none d-block" href="#contact">
+                  <a className="text-decoration-none block" href="#contact">
                     Contact
                   </a>
                 </Fade>

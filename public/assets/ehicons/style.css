@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'ehicon';
+  src: url('fonts/ehicon.eot?v9i2c');
+  src: url('fonts/ehicon.eot?v9i2c#iefix') format('embedded-opentype'),
+    url('fonts/ehicon.ttf?v9i2c') format('truetype'), url('fonts/ehicon.woff?v9i2c') format('woff'),
+    url('fonts/ehicon.svg?v9i2c#ehicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='ehicon-'],
+[class*=' ehicon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ehicon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ehicon-close:before {
+  content: '\e900';
+}
+.ehicon-email:before {
+  content: '\e901';
+}
+.ehicon-facebook:before {
+  content: '\e902';
+}
+.ehicon-facebook-single:before {
+  content: '\e903';
+}
+.ehicon-instagram:before {
+  content: '\e904';
+}
+.ehicon-menu:before {
+  content: '\e905';
+}
+.ehicon-pinterest:before {
+  content: '\e906';
+}
+.ehicon-twitter:before {
+  content: '\e907';
+}
+.ehicon-whatsapp:before {
+  content: '\e908';
+}
+.ehicon-youtube:before {
+  content: '\ea9d';
+}
+.ehicon-github:before {
+  content: '\eab0';
+}
+.ehicon-linkedin:before {
+  content: '\eac9';
+}

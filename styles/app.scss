@@ -1,14 +1,14 @@
 body {
-  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Operator Mono', 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  font-weight: 300;
-  background-color: #193549;
+  font-weight: 400;
+  background-color: #ffffff;
   background-image: url(/images/bg-grid.webp), url(/images/bg-dust.webp);
   background-size: 1200px, 900px, 200px;
   background-position: 0 0, 100% 100%, 50%;
   background-attachment: fixed, scroll, scroll;
-  color: #fff;
+  color: #121212;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-smooth: auto;
@@ -20,8 +20,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Operator Mono', 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.3;
   font-weight: 500;
   strong {
@@ -113,7 +113,7 @@ img {
       a {
         position: relative;
         &:after {
-          content: "";
+          content: '';
           display: block;
           width: 0;
           height: 1px;
@@ -159,14 +159,11 @@ img {
 
 #header,
 #footer {
-  background: #15232dee url(/images/bg-dust.webp) center repeat;
+  background: url(/images/bg-dust.webp) center repeat;
   background-size: contain;
 }
 #header {
-  padding: 0 25px;
-  @media only screen and (max-width: 48em) {
-    padding: 0;
-  }
+  @apply bg-white bg-opacity-60 z-30;
 }
 .bg-dust {
   background: #15232dee url(/images/bg-dust.webp) center repeat;
@@ -177,9 +174,17 @@ img {
 #app-container {
   &.is-ready {
     #hero {
-      background: url(/images/bg-hero.svg) no-repeat right top;
-      background-size: 66vmax auto;
-      background-attachment: scroll;
+      @screen md {
+        background: url(/images/ervan-placeholder.png) no-repeat right top;
+        background-size: auto 54%;
+        background-attachment: scroll;
+      }
+      @screen lg {
+        background-size: auto 90%;
+      }
+      @screen xl {
+        background-size: contain;
+      }
     }
     #menu-mobile {
       transition: all ease 0.6s;
@@ -215,13 +220,13 @@ img {
   position: fixed;
   bottom: 0;
   &.left {
-    left: 40px;
-    width: 40px;
+    left: 20px;
+    width: 20px;
     z-index: 10;
   }
   &.right {
-    right: 40px;
-    width: 40px;
+    right: 20px;
+    width: 20px;
     z-index: 10;
   }
   .side-element-item {
@@ -233,12 +238,12 @@ img {
     align-items: center;
     position: relative;
     &:after {
-      content: "";
+      content: '';
       display: block;
       width: 1px;
-      height: 90px;
+      height: 40px;
       margin: 20px auto 0;
-      background: var(--bs-primary);
+      @apply bg-black;
     }
   }
   .email-link {
@@ -273,7 +278,7 @@ img {
   }
 }
 
-a[target="_blank"] {
+a[target='_blank'] {
   cursor: ne-resize;
 }
 
