@@ -83,7 +83,7 @@ export default function Home() {
                       <hr className="d-none d-md-block d-lg-block" />
                       <div className="widget py-1 py-md-3">
                         <h2 className="h5 text-uppercase fw-bold text-primary">Work Experiences</h2>
-                        {profile.experiences.length > 0 &&
+                        {/* {profile.experiences.length > 0 &&
                           profile.experiences.map((exp, idx) => (
                             <div className="experience mb-3 mb-md-4" key={idx}>
                               <h4 className="fw-bold h6 text-muted">{exp.title}</h4>
@@ -107,7 +107,7 @@ export default function Home() {
                                 </ul>
                               )}
                             </div>
-                          ))}
+                          ))} */}
                       </div>
                       <hr className="d-none d-md-block d-lg-block" />
                       <div className="widget py-1 py-md-3 mb-3">

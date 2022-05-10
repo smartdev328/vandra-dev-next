@@ -72,7 +72,6 @@ const profile = {
       promotion: [
         {
           title: 'Technology Lead',
-
           year: 'May 2022 - Present',
           summary: [
             'Connecting people across globe through technical assesment for potential project and collaboration',
@@ -83,7 +82,7 @@ const profile = {
             'Assist teams on technical feasibility, risk and effort estimation',
             'Help with technical assessment and prototyping to de-risk and prove out concepts',
             'Write clean, readable, modern, secure, robust and well performing code according to world-class standards',
-            'Lead by example and mentor junior members on best-practices on daily basis',
+            'Lead by example and mentoring junior members on best-practices on daily basis',
             'Manage tasks and workloads responsibly to ensure successful development and project deliverables',
           ],
         },
@@ -110,7 +109,6 @@ const profile = {
       promotion: [
         {
           title: 'Lead Frontend Developer',
-
           year: 'Dec 2016 - Jul 2020',
           summary: [
             'Write technical specifications, help my team to meet business requirements',
@@ -122,16 +120,8 @@ const profile = {
             'Hands-on to coding and styling main project and other micro-site projects',
           ],
         },
-      ],
-    },
-    {
-      company: 'DCC',
-      logoCompany:
-        'https://media-exp1.licdn.com/dms/image/C560BAQGey9YiNk4yOw/company-logo_100_100/0/1519872267902?e=1627516800&v=beta&t=jH7xtdbxvkk_qThbSiOn2x-jjfgreOZg_eO_49wsrVw',
-      promotion: [
         {
           title: 'Senior Frontend Developer',
-
           year: 'Jun 2015 - Dec 2016',
           summary: [
             'Joined as Co-Founder and contribute useful insights regarding web technologies to PT. Dragon Capital Centre',
@@ -148,14 +138,23 @@ const profile = {
         'https://media-exp1.licdn.com/dms/image/C560BAQEox87eYfzT4w/company-logo_100_100/0/1519880025972?e=1627516800&v=beta&t=mjeIOB44eAeZ--4ER-MYYw83DzJjH8EmC2RI0Wcg_aQ',
       promotion: [
         {
-          title: 'Senior Web Developer',
-
+          title: 'Senior Web Analyst',
           year: 'Jul 2012 - Jun 2015',
           summary: [
-            'Leading Web Development Team',
+            'Manage discussion with potential clients and create technical estimation',
+            'Leading and managing Web Development Team to ensure deliverables',
+            "Create report and documentation for client's projects",
+            "Improve company's website together with team to improve visibility and experiences.",
+          ],
+        },
+        {
+          title: 'Senior Web Developer',
+          year: 'Jul 2012 - Jun 2015',
+          summary: [
             'Create standardize Web Services for the company',
             "Create boilerplate Wordpress Template to be used for our client's projects",
             'Hands-on create WordPress website for clients',
+            'Provide design suggestion and actionables for better web experiences',
           ],
         },
       ],
@@ -170,7 +169,74 @@ const profile = {
   ],
   color: 'ae2b26',
   cover: 'https://i.imgur.com/i4NZURh.jpg',
-  recentSkills: ['TypeScript', 'Python', 'Microsoft Azure', 'Contentful', 'Storybook'],
+  recentSkills: [
+    'Next.js + TailwindCSS',
+    'TypeScript',
+    'Python',
+    'Microsoft Azure',
+    'Contentful',
+    'Storybook',
+    'Uniform',
+    'GraphCMS',
+  ],
+  allSkills: [
+    'React.js',
+    'TailwindCSS',
+    'Styled Components',
+    'CSS Modules',
+    'Atomic Design',
+    'Serverless',
+    'Google Cloud',
+    'Firebase',
+    'Firestore',
+    'Angular',
+    'Vue.js | Nuxt.js',
+    'Material UI',
+    'React Native',
+    'Flutter',
+    'Miro',
+    'Figma',
+    'Sketch',
+    'Zeplin',
+    'Adobe XD',
+    'Go Retro',
+    'Jira',
+    'Asana',
+    'Trello',
+    'Slack',
+    'Netlify',
+    'Vercel',
+    'Gatsby',
+    'AWS',
+    'AWS Lambda',
+    'AWS SES',
+    'AWS EC2',
+    'JAMStack',
+    'HeadlessCMS',
+    'Uniform',
+    'Contentful',
+    'GraphCMS',
+    'Sanity',
+    'CDN',
+    'CI/CD',
+    'Cloudflare',
+    'WordPress',
+    'Woocommerce',
+    'Payment Gateway',
+    'Custom Interation',
+    'Custom Software Development',
+    'Technical Feasibility',
+    'Technical Documentation',
+    'Technical Design',
+    'Technical Architecture',
+    'Team building',
+    'Team management',
+    'Project management',
+    'Protopie',
+    'MVP',
+    'Balsamiq',
+    'Whimsical',
+  ],
 };
 
 export default profile;

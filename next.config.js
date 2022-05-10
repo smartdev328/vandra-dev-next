@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   loader: 'custom',
-  target: 'serverless',
+  swcMinify: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
