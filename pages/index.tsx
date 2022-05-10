@@ -99,7 +99,7 @@ export default function Home() {
                     </Zoom>
                     <nav id="mainmenu">
                       <div className="hidden md:flex justify-end items-center">
-                        <ul className="m-0 flex">
+                        <ul className="m-0 mr-4 flex">
                           <li className="block ml-4 md:ml-10">
                             <Fade left duration={100}>
                               <a className="text-decoration-none" href="#about">
@@ -134,7 +134,8 @@ export default function Home() {
                           <button
                             className="ml-4 p-2 px-4 rounded bg-black text-white"
                             onClick={() => setState({ isOpen: true })}>
-                            Get Portfolio
+                            Get In Touch
+                            <span className="animate-pulse ml-2">⚡️</span>
                           </button>
                         </Zoom>
                       </div>
@@ -183,7 +184,7 @@ export default function Home() {
                   </Fade>
                   <Fade delay={100} duration={100}>
                     {/* <h2 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h2> */}
-                    <h2 className="mb-4 font-bold text-lg text-gray-900 md:mb-8">
+                    <h2 className="mb-4 font-bold text-2xl text-gray-900 md:mb-8">
                       {/* Are you looking for a technopreneur that can help you and your business to
                       thrive in the modern digital world? Let me help you. */}
                       Bringing successful technology advancement closer to you.
@@ -193,9 +194,9 @@ export default function Home() {
                         </h2> */}
                   </Fade>
                   <Fade delay={100} duration={100}>
-                    <p className="mb-8 text-lg text-gray-900">
-                      I'd love to discuss about ideas, and my hard-earned experiences and insights
-                      will help you in any way. Get in touch and receive a complimentary tech call.
+                    <p className="mb-8 text-xl text-gray-900">
+                      I'd love to discuss about ideas, and my hard-earned experiences + insights
+                      will help you in many ways. Let's get in touch!
                     </p>
                     {/* <p className="mb-3 fs-5">
                              I help people, startup/company to achieve their business goal faster
@@ -215,15 +216,16 @@ export default function Home() {
                     <Zoom delay={300} duration={100}>
                       {/* <Pulse forever={true} delay={1500} duration={2000}> */}
                       <div className="flex items-center">
-                        <input
+                        {/* <input
                           type="text"
                           className="p-2 px-4 rounded border mr-2 max-w-xs flex-1 border-gray-500"
                           placeholder="Enter your email"
-                        />
+                        /> */}
                         <button
-                          className="btn btn-outline-success p-2 px-4 bg-black text-white rounded uppercase"
+                          className="btn btn-outline-success p-4 px-8 font-bold text-lg bg-black text-white rounded uppercase"
                           onClick={() => setState({ isOpen: true })}>
                           Get In Touch
+                          <span className="animate-pulse ml-2">⚡️</span>
                         </button>
                       </div>
                       {/* </Pulse> */}
@@ -246,15 +248,18 @@ export default function Home() {
                       <form onSubmit={handleSubmit} className="px-0 px-md-3">
                         <Fade cascade top collapse delay={100}>
                           <div>
-                            <h5 className="text-center mb-8  font-bold">
+                            <h5 className="text-center mb-2 text-xl font-bold">
+                              Let's Connect{' '}
                               <span
                                 role="emoji"
-                                className="animate-bounce text-xl inline-block mr-2">
+                                className="animate-bounce text-xl inline-block ml-2">
                                 👇🏻
-                              </span>{' '}
-                              Fill out form below and download portfolio and see if my{' '}
-                              <u>case study</u> and <u>workflow</u> works for you.
+                              </span>
                             </h5>
+                            <p className="text-center mb-8 text-gray-500 px-6">
+                              I wanna connect with you properly, then we can set tech call to
+                              discuss some ideas.
+                            </p>
                             <div className="form-group mb-4">
                               <input
                                 type="text"
@@ -286,9 +291,13 @@ export default function Home() {
                               <button
                                 type="submit"
                                 className="font-bold w-full p-2 px-4 rounded uppercase text-white bg-black">
-                                Send me this portfolio <span role="emoji">⚡️</span>
+                                Get in Touch <span role="emoji animate-pulse ml-2">⚡️</span>
                               </button>
                             )}
+                            <p className="text-center text-xs mt-4 text-gray-500 px-6">
+                              You will also receive my latest <u>portfolio</u> and <u>workflow</u>{' '}
+                              blueprint sent directly to your inbox.
+                            </p>
                             <p className="mb-0 text-muted text-center mt-4 text-gray-500">
                               Your privacy is protected
                             </p>
@@ -337,13 +346,13 @@ export default function Home() {
                           </h2>
                         </Zoom>
                         <Fade delay={300}>
-                          <p className="mb-4">
-                            As software engineer|technology expert who enjoys crafting things that
-                            live on heart of many people, i love to bring technology solution that
-                            are intersecting with creativity.
+                          <p className="mb-4 lg:text-lg">
+                            As software engineer & technology specialist who enjoy crafting things
+                            that live on the heart of many people, i always love to bring technology
+                            solution that is intersecting with creativity.
                           </p>
 
-                          <p className="mb-4">
+                          <p className="mb-4 lg:text-lg">
                             I'm now dedicated myself as{' '}
                             <span className="underline font-bold">Technology Lead</span> at{' '}
                             <a
@@ -355,7 +364,7 @@ export default function Home() {
                             </a>
                           </p>
 
-                          <p className="mb-2">
+                          <p className="mb-2 lg:text-lg">
                             Here are a few technologies I've been worked on recently:
                           </p>
                           <div className="flex flex-wrap mb-4">
@@ -377,7 +386,7 @@ export default function Home() {
                               </div>
                             ))}
                           </div>
-                          <p className="mb-2">And my other experiences:</p>
+                          {/* <p className="mb-2">And my other experiences:</p>
                           <div className="mb-4 text-gray-500 flex flex-wrap">
                             {profile.allSkills.map((skill, index) => (
                               <p
@@ -386,7 +395,7 @@ export default function Home() {
                                 {skill}
                               </p>
                             ))}
-                          </div>
+                          </div> */}
                         </Fade>
                       </div>
                     </div>
@@ -396,8 +405,8 @@ export default function Home() {
             </div>
           </div>
           <div id="experience" className="py-10 md:py-20">
-            <div className="container max-w-7xl">
-              <div className="row justify-center">
+            <div className="container">
+              <div className="row justify-center md:max-w-7xl mx-auto">
                 <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
                     <Zoom top duration={300}>
@@ -426,7 +435,7 @@ export default function Home() {
                                     duration={300}>
                                     <button
                                       key={exp.company + index}
-                                      className="nav-link text-center md:text-left p-2 px-4 text-nowrap whitespace-nowrap active border-l-2 w-full border-l-black bg-black bg-opacity-10"
+                                      className="nav-link text-center md:text-left p-2 px-4 text-nowrap whitespace-nowrap lg:text-lg active border-l-2 w-full border-l-black bg-black bg-opacity-10"
                                       type="button"
                                       role="tab">
                                       {exp.company}
@@ -441,7 +450,7 @@ export default function Home() {
                                   duration={300}>
                                   <button
                                     key={exp.company + index}
-                                    className="nav-link text-center md:text-left p-2 px-4 border-l-2 w-full whitespace-nowrap border-l-black hover:bg-black hover:bg-opacity-5"
+                                    className="nav-link text-center md:text-left p-2 px-4 border-l-2 w-full whitespace-nowrap lg:text-lg border-l-black hover:bg-black hover:bg-opacity-5"
                                     type="button"
                                     onClick={() => setState({ workTab: index })}
                                     role="tab">
@@ -530,7 +539,7 @@ export default function Home() {
                                     </div>
                                   </div>
 
-                                  <p className="leading-tight small text-gray-700 mb-0 mt-4">
+                                  <p className="leading-tight lg:text-lg text-gray-700 mb-0 mt-4">
                                     <em>
                                       Ervandra is an extraordinary software engineer, he always
                                       comes with a great solution, practical and impactful for any
@@ -570,7 +579,7 @@ export default function Home() {
                                     </div>
                                   </div>
 
-                                  <p className="leading-tight text-gray-700 mb-0 mt-4">
+                                  <p className="leading-tight lg:text-lg text-gray-700 mb-0 mt-4">
                                     <em>
                                       If you're looking for a versatile frontend web developer I'll
                                       definitely recommend Ervandra right away. Several qualities of
@@ -610,7 +619,7 @@ export default function Home() {
                                     </div>
                                   </div>
 
-                                  <p className="leading-tight text-gray-700 mb-0 mt-4">
+                                  <p className="leading-tight lg:text-lg text-gray-700 mb-0 mt-4">
                                     <em>
                                       Ervandra is a very special person for us. He always
                                       overdeliver his services, even without being asked! He saved
@@ -646,18 +655,23 @@ export default function Home() {
                         </Zoom>
                       </h2>
                       <p className="mb-8 md:text-lg text-center">
-                        Although I'm not currently looking for any job opportunities, my inbox is
-                        always open. Whether for a potential project or just to say hi, I'll try my
-                        best to answer your email!
+                        I would love to hear from you, connect and discussing ideas with you, and
+                        potentially sharing my expertise to help you getting advance in technology.
                       </p>
                       <Zoom delay={300} duration={300}>
-                        <a
+                        {/* <a
                           href="mailto:hi@ervandra.com"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-white text-black border-2 border-black p-4 px-8 rounded">
                           <span className="mr-2">👋🏻</span> Say Hello
-                        </a>
+                        </a> */}
+                        <button
+                          className="btn btn-outline-success p-4 px-8 font-bold text-lg bg-black text-white rounded uppercase"
+                          onClick={() => setState({ isOpen: true })}>
+                          Get In Touch
+                          <span className="animate-pulse ml-2">⚡️</span>
+                        </button>
                       </Zoom>
                     </div>
                   </div>

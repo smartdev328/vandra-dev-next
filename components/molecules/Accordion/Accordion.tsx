@@ -38,7 +38,7 @@ export default function Accordion({ data, company }) {
                 <Fade cascade>
                   <div className="job-desc">
                     {work.summary.map((sum, idx) => (
-                      <h6 className="font-light my-2 flex" key={sum + idx}>
+                      <h6 className="font-light my-2 lg:text-lg flex" key={sum + idx}>
                         <span className="text-warning text-red-900 mr-4">⌲</span>
                         <span>{sum}</span>
                       </h6>
