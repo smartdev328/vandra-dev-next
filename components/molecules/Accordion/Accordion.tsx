@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Fade from 'react-reveal';
 
-export default function Accordion({ data, company }) {
+export default function Accordion({ data, company, currentJob = false }) {
   const initialState = { activeAccordion: 0 };
   const [state, setMyState] = useState(initialState);
   const setState = newState => {
@@ -22,12 +22,16 @@ export default function Accordion({ data, company }) {
                 }`}
                 onClick={() => setState({ activeAccordion: index })}>
                 <h3 className="mb-0 text-xl leading-tight font-bold flex items-center flex-wrap">
-                  {index > 0 && (
+                  {currentJob && index === 0 ? (
+                    <span className="inline-block bg-orange-100 text-gray-900 rounded text-xs px-1 align-middle border border-orange-300 mr-2 uppercase">
+                      Current
+                    </span>
+                  ) : (
                     <span className="inline-block bg-gray-100 text-gray-500 rounded text-xs px-1 align-middle border border-gray-300 mr-2 animate-pulse uppercase">
                       Past role
                     </span>
                   )}
-                  {work.title} <span className="text-grey-700 inline-block">@ {company}</span>
+                  {work.title} <span className="ml-1 text-grey-700 inline-block">@{company}</span>
                 </h3>
                 <h4 className="text-lg mb-4 text-gray-700">
                   <small>{work.year}</small>

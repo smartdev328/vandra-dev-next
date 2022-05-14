@@ -40,7 +40,7 @@ export default function Home() {
     await subscribeForm(payload)
       .then(resp => {
         if (resp.status === 200) {
-          setState({ success: true });
+          setState({ success: true, name: '', email: '' });
         }
       })
       .catch(err => {
@@ -79,19 +79,19 @@ export default function Home() {
         <Bounce top duration={100}>
           <header
             id="header"
-            className={`${isMenuOpen ? '' : 'sticky top-0'} shadow py-4`}
+            className={`${isMenuOpen ? '' : 'sticky top-0'} shadow py-2`}
             style={{ backdropFilter: 'blur(5px)' }}>
             <div className="container-fluid container mx-auto">
               <div className="row">
                 <div className="col-12">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mx-5 md:mx-0">
                     <Zoom right duration={300}>
-                      <div className="logo text-black">
+                      <div className="logo text-black h-10 my-2">
                         <Image
-                          src="/images/logo.svg"
+                          src="/images/logo-5.svg"
                           alt="Ervandra Halim"
-                          width="48"
-                          height="48"
+                          width="40"
+                          height="40"
                           layout="intrinsic"
                           className="block"
                         />
@@ -142,9 +142,9 @@ export default function Home() {
                       <div className="block md:hidden">
                         <Zoom delay={300}>
                           <button
-                            className="btn bg-transparent fs-4 text-primary"
+                            className="btn bg-transparent text-2xl text-primary"
                             onClick={() => setState({ isMenuOpen: !isMenuOpen })}
-                            style={{ width: '46px', height: '46px' }}>
+                            style={{ width: '48px', height: '48px' }}>
                             {isMenuOpen ? <span>×</span> : <span className="ehicon-menu" />}
                           </button>
                         </Zoom>
@@ -157,12 +157,12 @@ export default function Home() {
           </header>
         </Bounce>
 
-        <section id="content" className="px-3 md:px-0 relative overflow-hidden -mt-[87px] ">
+        <section id="content" className="px-5 md:px-0 relative overflow-hidden md:-mt-18">
           <div
             id="hero"
             className="py-4 md:py-10 bg-opacity-10 relative wide:min-h-screen min-h-[50vw] flex flex-col justify-center">
             <div className="container mx-auto">
-              <div className="py-10 md:py-20 lg:w-1/2">
+              <div className="py-4 md:py-20 lg:w-1/2">
                 <div className="py-3 py-md-5">
                   <Fade duration={100}>
                     <h2 className="text-base text-gray-900 mb-4">
@@ -184,17 +184,17 @@ export default function Home() {
                   </Fade>
                   <Fade delay={100} duration={100}>
                     {/* <h2 className="mb-3 mb-md-5 fs-4 fw-bold">{profile.mission}.</h2> */}
-                    <h2 className="mb-4 font-bold text-2xl text-gray-900 md:mb-8">
+                    <h2 className="mb-4 font-bold text-lg md:text-2xl text-gray-900 md:mb-8">
                       {/* Are you looking for a technopreneur that can help you and your business to
                       thrive in the modern digital world? Let me help you. */}
-                      Bringing successful technology advancement closer to you.
+                      Bring successful technology advancement closer to you.
                     </h2>
                     {/* <h2 className="mb-3 mb-md-5 fs-4 fw-bold">
                           Technology Enthusiast & Consultant
                         </h2> */}
                   </Fade>
                   <Fade delay={100} duration={100}>
-                    <p className="mb-8 text-xl text-gray-900">
+                    <p className="mb-8 text-base md:text-xl text-gray-900">
                       I'd love to discuss about ideas, and my hard-earned experiences + insights
                       will help you in many ways. Let's get in touch!
                     </p>
@@ -222,7 +222,7 @@ export default function Home() {
                           placeholder="Enter your email"
                         /> */}
                         <button
-                          className="btn btn-outline-success p-4 px-8 font-bold text-lg bg-black text-white rounded uppercase"
+                          className="btn btn-outline-success p-3 px-4 md:p-4 md:px-8 font-bold text-base md:text-lg bg-black text-white rounded uppercase w-full md:w-auto"
                           onClick={() => setState({ isOpen: true })}>
                           Get In Touch
                           <span className="animate-pulse ml-2">⚡️</span>
@@ -234,15 +234,34 @@ export default function Home() {
                 </div>
                 <Modal
                   isOpen={isOpen}
-                  onRequestClose={() => setState({ isOpen: false })}
+                  onRequestClose={() => setState({ success: false, isOpen: false })}
                   contentLabel="Modal"
                   className="reveal p-3 center small"
                   ariaHideApp={false}>
-                  <div className="p-3 pt-4">
+                  <div className="md:p-3 md:pt-4">
                     {success ? (
                       <div className="p-0 text-center">
-                        <h3 className="mb-4">Success</h3>
-                        <button className="btn btn-primary">Close</button>
+                        <h3 className="text-xl font-bold mb-2">
+                          <span
+                            className="mr-2 inline-block text-2xl animate-bounce relative"
+                            role="emoji">
+                            👍🏻
+                          </span>{' '}
+                          Thank you!
+                        </h3>
+                        <p className="text-gray-500 mb-4">
+                          I will sending you my onboarding document, so you can get the most of my
+                          expertise and leveraging them to your needs
+                        </p>
+                        <div className="flex justify-center mt-8">
+                          <button
+                            className="btn bg-gray-100 text-black p-2 px-6 mb-0 border-gray-200 border"
+                            onClick={() => {
+                              setState({ isOpen: false, success: false });
+                            }}>
+                            Close
+                          </button>
+                        </div>
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="px-0 px-md-3">
@@ -256,7 +275,7 @@ export default function Home() {
                                 👇🏻
                               </span>
                             </h5>
-                            <p className="text-center mb-8 text-gray-500 px-6">
+                            <p className="text-center mb-8 text-gray-500 md:px-6">
                               I wanna connect with you properly, then we can set tech call to
                               discuss some ideas.
                             </p>
@@ -284,7 +303,7 @@ export default function Home() {
                             {isLoading ? (
                               <button
                                 type="button"
-                                className="bg-gray-500 text-black cursor-not-allowed opacity-50 animate-pulse w-full rounded p-2 px-4 uppercase">
+                                className="bg-gray-500 text-white cursor-not-allowed opacity-50 animate-pulse w-full rounded p-2 px-4 uppercase">
                                 Submitting..
                               </button>
                             ) : (
@@ -294,7 +313,7 @@ export default function Home() {
                                 Get in Touch <span role="emoji animate-pulse ml-2">⚡️</span>
                               </button>
                             )}
-                            <p className="text-center text-xs mt-4 text-gray-500 px-6">
+                            <p className="text-center text-xs mt-4 text-gray-500 md:px-6">
                               You will also receive my latest <u>portfolio</u> and <u>workflow</u>{' '}
                               blueprint sent directly to your inbox.
                             </p>
@@ -309,34 +328,36 @@ export default function Home() {
 
                   <button
                     className="btn btn-close close-reveal"
-                    onClick={() => setState({ isOpen: false })}>
-                    &times;
+                    onClick={() => setState({ success: false, isOpen: false })}>
+                    <span className=" text-lg ehicon-close"></span>
                   </button>
                 </Modal>
               </div>
             </div>
           </div>
-          <div id="about" className="py-10 md:py-20">
+          <div id="about" className="py-5 md:py-20 -mt-20 md:mt-0">
             <div className="container">
-              <div className="row justify-center">
+              <div className="row justify-center pt-20 md:pt-0">
                 <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
-                    <div className="row md:max-w-7xl mx-auto flex justify-between">
-                      <div className="col-12 col-md-3 order-md-2 text-end md:w-3/12">
-                        <Zoom right fraction={0.5}>
-                          <div className="rounded-full mb-3 mx-auto">
-                            <Image
-                              src="/images/ervan.png"
-                              alt="Ervandra Halim"
-                              width="300"
-                              height="300"
-                              layout="responsive"
-                              className="rounded-full"
-                            />
-                          </div>
-                        </Zoom>
+                    <div className="row md:max-w-7xl mx-auto flex flex-wrap justify-between">
+                      <div className="col-12 col-md-3 order-md-2 text-end w-full md:w-3/12">
+                        <div className="w-1/2 md:w-full mx-auto mb-5 md:mb-0">
+                          <Zoom right fraction={0.5}>
+                            <div className="rounded-full mb-3 mx-auto">
+                              <Image
+                                src="/images/ervan.png"
+                                alt="Ervandra Halim"
+                                width="300"
+                                height="300"
+                                layout="responsive"
+                                className="rounded-full"
+                              />
+                            </div>
+                          </Zoom>
+                        </div>
                       </div>
-                      <div className="col-12 col-md-7 md:w-8/12">
+                      <div className="col-12 col-md-7 w-full md:w-8/12">
                         <Zoom top duration={300}>
                           <h2 className="font-bold mb-4 text-2xl md:text-4xl">
                             <span role="emoji" className="animate-bounce inline-block">
@@ -358,8 +379,11 @@ export default function Home() {
                             <a
                               href="https://www.rga.com"
                               target="_blank"
-                              className="fw-bold"
+                              className="font-bold inline-flex items-center hover:underline"
                               rel="noopener noreferrer">
+                              <span
+                                className="inline-flex w-4 h-4 mr-1"
+                                style={{ background: 'red' }}></span>
                               R/GA
                             </a>
                           </p>
@@ -404,9 +428,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="experience" className="py-10 md:py-20">
+          <div id="experience" className="py-5 md:py-20 -mt-20 md:mt-0">
             <div className="container">
-              <div className="row justify-center md:max-w-7xl mx-auto">
+              <div className="row justify-center md:max-w-7xl mx-auto pt-20 md:pt-0">
                 <div className="col-12 col-lg-10">
                   <div className="py-3 py-md-5">
                     <Zoom top duration={300}>
@@ -472,7 +496,11 @@ export default function Home() {
                                   }`}
                                   role="tabpanel"
                                   key={exp.company + index}>
-                                  <Accordion data={exp.promotion} company={exp.company} />
+                                  <Accordion
+                                    data={exp.promotion}
+                                    company={exp.company}
+                                    currentJob={index === 0}
+                                  />
                                 </div>
                               );
                             })}
@@ -486,11 +514,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="testimonial" className="py-10 md:py-20">
+          <div id="testimonial" className="py-5 md:py-20 -mt-20">
             <div className="container">
               <div className="row justify-center">
                 <div className="col">
-                  <div className="py-3 py-md-5">
+                  <div className="py-3 pt-20 md:py-5">
                     <Fade delay={300}>
                       <h4 className="text-xl md:text-2xl mb-0 text-center relative">
                         Why'd they recommend to
@@ -534,7 +562,7 @@ export default function Home() {
                                     <div className="flex-auto">
                                       <h3 className="mb-0 fw-bold text-lg">Donny Riantori</h3>
                                       <h4 className="mb-0 text-sm text-gray-700">
-                                        Co-founder & CTO - Gomodo Technologies Pte Ltd
+                                        CTO - Gomodo Technologies Pte Ltd
                                       </h4>
                                     </div>
                                   </div>
@@ -614,7 +642,7 @@ export default function Home() {
                                     <div className="flex-auto">
                                       <h3 className="mb-0 text-lg font-bold">Jussi Hurmola</h3>
                                       <h4 className="text-sm text-gray-700 mb-0">
-                                        Chief Executive Office - LifeLearn Holdings Pte Ltd
+                                        CEO - LifeLearn Holdings Pte Ltd
                                       </h4>
                                     </div>
                                   </div>
@@ -642,7 +670,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="contact" className="py-10 md:py-20">
+          <div id="contact" className="py-5 md:py-20">
             <div className="container">
               <div className="row justify-center">
                 <div className="col-12 md:max-w-3xl mx-auto">
@@ -667,7 +695,7 @@ export default function Home() {
                           <span className="mr-2">👋🏻</span> Say Hello
                         </a> */}
                         <button
-                          className="btn btn-outline-success p-4 px-8 font-bold text-lg bg-black text-white rounded uppercase"
+                          className="btn btn-outline-success p-3 md:p-4 px-8 font-bold text-base md:text-lg bg-black text-white rounded uppercase"
                           onClick={() => setState({ isOpen: true })}>
                           Get In Touch
                           <span className="animate-pulse ml-2">⚡️</span>
@@ -760,11 +788,11 @@ export default function Home() {
         <div id="menu-mobile" className={`${isMenuOpen ? 'active' : ''}`}>
           <div className="">
             <div
-              className="btn-container flex justify-content-end items-center p-2 mb-0"
+              className="btn-container flex justify-end items-center p-2 mb-0"
               style={{ margin: '-1em' }}>
               <button
                 aria-label="Close"
-                className="btn btn-transparent border-2 border-light text-light fs-6 p-0 text-center rounded-full lh-1"
+                className="btn btn-transparent p-0 text-center lh-1"
                 style={{ width: '40px', height: '40px' }}
                 onClick={() => setState({ isMenuOpen: false })}>
                 <span className="ehicon-close" />
@@ -803,13 +831,16 @@ export default function Home() {
               </li>
             </ul>
             <Zoom bottom when={isMenuOpen} delay={1200} duration={500}>
-              <Pulse forever={true} delay={1500} duration={2000}>
-                <button
-                  className="btn rounded border-2 w-100 rounded-3 fw-bold shadow btn-outline-primary btn-sm"
-                  onClick={() => setState({ isOpen: true })}>
-                  Join Tech-a-break <span>⚡️</span>
-                </button>
-              </Pulse>
+              {/* <Pulse forever={true} delay={1500} duration={2000}> */}
+              <button
+                className="btn p-3 px-4 w-full bg-black uppercase text-white font-bold"
+                onClick={() => setState({ isOpen: true })}>
+                Get In Touch{' '}
+                <span className="animate-pulse ml-2" role="emoji">
+                  ⚡️
+                </span>
+              </button>
+              {/* </Pulse> */}
             </Zoom>
           </div>
         </div>

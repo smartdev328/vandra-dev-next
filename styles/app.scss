@@ -139,7 +139,7 @@ img {
   z-index: 5;
   transform: translateX(60vw);
   opacity: 0;
-  background: #15232dee url(/images/bg-dust.webp) center repeat;
+  background: #ffffff url(/images/bg-dust.webp) center repeat;
   background-size: contain;
   padding: 1em;
   &.active {
@@ -154,7 +154,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #header,

@@ -172,8 +172,8 @@ const profile = {
   recentSkills: [
     'Next.js + TailwindCSS',
     'TypeScript',
-    'Python',
-    'Microsoft Azure',
+    // 'Python',
+    // 'Microsoft Azure',
     'Contentful',
     'Storybook',
     'Uniform',

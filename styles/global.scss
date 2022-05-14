@@ -74,16 +74,5 @@ $enable-responsive-font-sizes: true;
 }
 
 .close-reveal {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 32px;
-  height: 32px;
-  font-size: 2rem;
-  line-height: 32px;
-  text-align: center;
-  color: #999;
-  z-index: 5;
-  transform-origin: 50% 50%;
-  background: none;
+  @apply text-gray-300 text-lg top-2 right-3 absolute z-10 hover:text-gray-500;
 }
