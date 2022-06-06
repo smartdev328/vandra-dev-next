@@ -162,8 +162,8 @@ export default function Home() {
             id="hero"
             className="py-4 md:py-10 bg-opacity-10 relative wide:min-h-screen min-h-[50vw] flex flex-col justify-center">
             <div className="container mx-auto">
-              <div className="py-4 md:py-20 lg:w-1/2">
-                <div className="py-3 py-md-5">
+              <div className="py-5 md:py-20 lg:w-1/2">
+                <div className="">
                   <Fade duration={100}>
                     <h2 className="text-base text-gray-900 mb-4">
                       <span
@@ -539,132 +539,63 @@ export default function Home() {
                         me.
                       </p>
                     </Fade>
-                    <div id="client-testimony">
-                      <div className="row justify-center grid gap-10 grid-cols-1 md:grid-cols-3">
-                        <div className="col-12 ">
-                          <Fade duration={300}>
-                            <div className="testimony-item mb-3">
-                              <div className="card rounded bg-white bg-opacity-50 filter backdrop-blur-lg shadow-lg border">
-                                <div className="card-body p-5">
-                                  <div className="flex items-end">
-                                    <div
-                                      className=" shadow rounded-full mr-4"
-                                      style={{ width: '72px', flexBasis: '72px', flexShrink: 0 }}>
-                                      <Image
-                                        src="/images/testimonials/donny-riantori.jpg"
-                                        alt="Donny Riantori"
-                                        width="72"
-                                        height="72"
-                                        layout="responsive"
-                                        className="rounded-full"
-                                      />
-                                    </div>
-                                    <div className="flex-auto">
-                                      <h3 className="mb-0 fw-bold text-lg">Donny Riantori</h3>
-                                      <h4 className="mb-0 text-sm text-gray-700">
-                                        CTO - Gomodo Technologies Pte Ltd
-                                      </h4>
-                                    </div>
-                                  </div>
-
-                                  <p className="leading-tight lg:text-lg text-gray-700 mb-0 mt-4">
-                                    <em>
-                                      Ervandra is an extraordinary software engineer, he always
-                                      comes with a great solution, practical and impactful for any
-                                      result of his project, you will find "engineering thinking",
-                                      lives on this very talented guy, not only on his work but also
-                                      on every process that he takes.
-                                    </em>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </Fade>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-4">
-                          <Fade duration={300}>
-                            <div className="testimony-item mb-3 mt-0 mt-lg-4">
-                              <div className="card rounded border bg-white bg-opacity-50 filter backdrop-blur-lg shadow-lg">
-                                <div className="card-body p-4">
-                                  <div className="flex items-end">
-                                    <div
-                                      className="shadow rounded-full mr-4"
-                                      style={{ width: '72px', flexBasis: '72px', flexShrink: 0 }}>
-                                      <Image
-                                        src="/images/testimonials/erick-liemarga.jpg"
-                                        alt="Erick Liemarga"
-                                        width="72"
-                                        height="72"
-                                        layout="responsive"
-                                        className="rounded-full"
-                                      />
-                                    </div>
-                                    <div className="flex-auto">
-                                      <h3 className="mb-0 text-lg font-bold">Erick Liemarga</h3>
-                                      <h4 className="mb-0 text-sm text-gray-700">
-                                        Chief Product Officer - LABABOOK
-                                      </h4>
-                                    </div>
-                                  </div>
-
-                                  <p className="leading-tight lg:text-lg text-gray-700 mb-0 mt-4">
-                                    <em>
-                                      If you're looking for a versatile frontend web developer I'll
-                                      definitely recommend Ervandra right away. Several qualities of
-                                      him that I could easily recommend are; Open minded, critical
-                                      thinking, resourceful and always look for improvement. He's
-                                      always work really hard to improve and expand his knowledge.
-                                    </em>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </Fade>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-4">
-                          <Fade duration={300}>
-                            <div className="testimony-item mb-3">
-                              <div className="card rounded bg-white bg-opacity-50 filter backdrop-blur-lg shadow-lg border">
-                                <div className="card-body p-4">
-                                  <div className="flex items-end">
-                                    <div
-                                      className="shadow rounded-full mr-4"
-                                      style={{ width: '72px', flexBasis: '72px', flexShrink: 0 }}>
-                                      <Image
-                                        src="/images/testimonials/jussi-hurmola.jpg"
-                                        alt="Jussi Hurmola"
-                                        width="72"
-                                        height="72"
-                                        layout="responsive"
-                                        className="rounded-full"
-                                      />
-                                    </div>
-                                    <div className="flex-auto">
-                                      <h3 className="mb-0 text-lg font-bold">Jussi Hurmola</h3>
-                                      <h4 className="text-sm text-gray-700 mb-0">
-                                        CEO - LifeLearn Holdings Pte Ltd
-                                      </h4>
-                                    </div>
-                                  </div>
-
-                                  <p className="leading-tight lg:text-lg text-gray-700 mb-0 mt-4">
-                                    <em>
-                                      Ervandra is a very special person for us. He always
-                                      overdeliver his services, even without being asked! He saved
-                                      us multiple times due to our primitive and outdated backend
-                                      system, he provide quick and working solutions. Indeed, our
-                                      most valuable person regarding to technology, especially web
-                                      applications.
-                                    </em>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </Fade>
-                        </div>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div id="client-testimony">
+              <div className="overflow-x-auto px-5 md:px-10 -mx-5 md:mx-auto">
+                <div className="gap-10 flex flex-nowrap">
+                  {profile.testimonials.map((testimony, index) => {
+                    return (
+                      <div className="min-w-[70vw] md:min-w-[33vw]" key={index}>
+                        <Fade duration={300}>
+                          <div className="testimony-item mb-3">
+                            <div className="card rounded bg-white bg-opacity-50 filter backdrop-blur-lg shadow-lg border">
+                              <div className="card-body p-5">
+                                <div className="flex items-end">
+                                  <div
+                                    className=" shadow rounded-full mr-4"
+                                    style={{ width: '72px', flexBasis: '72px', flexShrink: 0 }}>
+                                    <Image
+                                      src={testimony.photo}
+                                      alt={testimony.name}
+                                      width="72"
+                                      height="72"
+                                      layout="responsive"
+                                      className="rounded-full"
+                                    />
+                                  </div>
+                                  <div className="flex-auto">
+                                    <h3 className="mb-0 fw-bold text-lg">{testimony.name}</h3>
+                                    <h4 className="mb-0 font-normal text-sm text-gray-700">
+                                      {testimony.role}
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <p className="font-light italic text-base text-gray-900 mb-0 mt-4">
+                                  {testimony.text}
+                                </p>
+                                <p className="text-sm text-gray-500 mt-2">
+                                  <em>
+                                    Source:{' '}
+                                    <a
+                                      href={testimony.source?.url}
+                                      rel="noopener noreferrer"
+                                      target="_blank"
+                                      className="underline">
+                                      {testimony.source?.text}
+                                    </a>
+                                  </em>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </Fade>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
