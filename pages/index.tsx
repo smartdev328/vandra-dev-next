@@ -574,7 +574,7 @@ export default function Home() {
                                   </div>
                                 </div>
 
-                                <p className="font-light italic text-base text-gray-900 mb-0 mt-4">
+                                <p className="font-light whitespace-pre-line italic text-base text-gray-900 mb-0 mt-4">
                                   {testimony.text}
                                 </p>
                                 <p className="text-sm text-gray-500 mt-2">

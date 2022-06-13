@@ -1,7 +1,7 @@
 const profile = {
   name: 'Ervandra Halim',
   title: 'Technology Lead',
-  mission: 'Combining Technology & Creativity For A Greater Impact',
+  mission: 'Software Engineer & Technology Specialist',
   email: 'hi@ervandra.com',
   phone: '+6287708770800',
   photo: 'https://www.ervandra.com/wp-content/uploads/2020/12/ervan-round.png',
@@ -43,21 +43,6 @@ const profile = {
       id: 'github',
       icon: 'github',
       link: 'https://www.github.com/ervandra',
-    },
-    {
-      id: 'facebook',
-      icon: 'facebook',
-      link: 'https://www.facebook.com/ervandra.dev',
-    },
-    {
-      id: 'instagram',
-      icon: 'instagram',
-      link: 'https://www.instagram.com/ervandra.dev',
-    },
-    {
-      id: 'youtube',
-      icon: 'youtube',
-      link: 'https://www.youtube.com/c/ervandra',
     },
     {
       id: 'linkedin',
@@ -242,7 +227,17 @@ const profile = {
       name: 'David Alfa Sunarna',
       role: 'Associate Technology Director - R/GA',
       photo: '/images/testimonials/david.jpeg',
-      text: "When I first meet Ervan, I know he will be a leader. Now he is leading a world-class engineering team in R/GA. As an engineer, Ervan's skill is no doubt. He deliver world-class technology solution for client and working with people around the globe. As a person, Ervan's is a very responsible person, have a very good communication and writing skills.",
+      text: "When I first meet Ervan, I know he will be a leader in engineering team someday. And it is happening now, im moving from R/GA and now Ervan replacing me to lead a world-class team in R/GA.\n\n As an engineer, Ervan's skill is no doubt. He deliver world-class technology solution for client and working with people from around the globe. As a person, Ervan's is a very responsible person and have a very good communication and writing skill. Hope we meet again, and work together again. Ervan!",
+      source: {
+        url: 'https://linkedin.com/in/ervandra',
+        text: 'LinkedIn',
+      },
+    },
+    {
+      name: 'Eko Purnomo',
+      role: 'VP of Technology at Komunal Indonesia',
+      photo: '/images/testimonials/eko.jpeg',
+      text: "When I was at R/GA Ervan helps me a lot when doing things, I never find it difficult to work with him and he was always on time for delivery. He knew the principle when doing the work and always questioned what we could improve in the future.\n\nHis technical skills in front-end development are unquestionable, I can trust him to deliver without any supervision whatsoever, and he's a dedicated person. Apart from work, he's someone you'd like to share about life, idea and experiences, and I'd like to cross paths again with Ervan in the future.",
       source: {
         url: 'https://linkedin.com/in/ervandra',
         text: 'LinkedIn',
@@ -250,9 +245,9 @@ const profile = {
     },
     {
       name: 'Donny Riantori',
-      role: 'CTO - Gomodo Technologies Pte Ltd',
+      role: 'VP Engineering at DDTC',
       photo: '/images/testimonials/donny-riantori.jpg',
-      text: "Ervandra is an extraordinary software engineer, he always comes with a great solution, practical and impactful for any result of his project, you will find 'engineering thinking', lives on this very talented guy, not only on his work but also on every process that he takes.",
+      text: "Ervandra is an extraordinary software engineer, he always comes with a great solution, practical and impactful for any result of his project.\n\n You will find 'engineering thinking', lives on this very talented guy, not only on his work but also on every process that he takes.",
       source: {
         url: 'https://linkedin.com/in/ervandra',
         text: 'LinkedIn',
@@ -262,7 +257,7 @@ const profile = {
       name: 'Erick Liemarga',
       role: 'Chief Product Officer - LABABOOK',
       photo: '/images/testimonials/erick-liemarga.jpg',
-      text: "If you're looking for a versatile frontend web developer I'll definitely recommend Ervandra right away. Several qualities of him that I could easily recommend are; Open minded, critical thinking, resourceful and always look for improvement. He's always work really hard to improve and expand his knowledge.",
+      text: "If you're looking for a versatile frontend web developer I'll definitely recommend Ervandra right away. Several qualities of him that I could easily recommend are; Open minded, critical thinking, resourceful and always look for improvement.\n\n He's always work really hard to improve and expand his knowledge.",
       source: {
         url: 'https://linkedin.com/in/ervandra',
         text: 'LinkedIn',
@@ -272,7 +267,7 @@ const profile = {
       name: 'Jussi Hurmola',
       role: 'CEO - LifeLearn Holdings Pte Ltd',
       photo: '/images/testimonials/jussi-hurmola.jpg',
-      text: 'Ervandra is a very special person for us. He always overdeliver his services, even without being asked! He saved us multiple times due to our primitive and outdated backend system, he provide quick and working solutions. Indeed, our most valuable person regarding to technology, especially web applications.',
+      text: 'Ervandra is a very special person for us. He always overdeliver his services, even without being asked. He saved us multiple times due to our primitive and outdated backend system, he provide quick and working solutions.\n\n Indeed, our most valuable person regarding to technology, especially web applications and technology solutions',
       source: {
         url: 'https://linkedin.com/in/ervandra',
         text: 'LinkedIn',
@@ -282,7 +277,7 @@ const profile = {
       name: 'Effene Henry',
       role: 'Lead Squad Engineer - Paper.id',
       photo: '/images/testimonials/effene.jpeg',
-      text: "I've been working with Ervandra in CIAYO Comics for over 2 years and I was amazed by Ervandra’s skill in front end web developer. He is a highly focused person as well as analytical and can add to any team he is a part of. His energy to make things happen was contagious and it helped us achieve great goals. One of the best front end web developer we've had for sure.",
+      text: "I've been working with Ervandra in CIAYO Comics for over 2 years and I was amazed by Ervandra’s skill in front end web developer. He is a highly focused person as well as analytical and can add to any team he is a part of.\n\n His energy to make things happen was contagious and it helped us achieve great goals. One of the best front end web developer we've had for sure.",
       source: {
         url: 'https://linkedin.com/in/ervandra',
         text: 'LinkedIn',
@@ -292,7 +287,7 @@ const profile = {
       name: 'Fran Sisco',
       role: 'Android Developer at PT. Bank MNC Internasional, Tbk.',
       photo: '/images/testimonials/sisco.jpeg',
-      text: 'Ervandra is my teammate at CIAYO, he is a great developer. he is like a witch, because he can bring delightful experiences and interactions to the UI, he work always amazes me. One of the best front end web developer i know. It was my pleasure to have worked with him.',
+      text: 'Ervandra is my teammate at CIAYO, he is a great developer. he is like a witch, because he can bring delightful experiences and interactions to the UI, he work always amazes me.\n\n One of the best front end web developer i know. It was my pleasure to have worked with him.',
       source: {
         url: 'https://linkedin.com/in/ervandra',
         text: 'LinkedIn',
