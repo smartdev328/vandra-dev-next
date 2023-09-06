@@ -313,10 +313,10 @@ export default function Home() {
                                 Get in Touch <span role="emoji animate-pulse ml-2">⚡️</span>
                               </button>
                             )}
-                            <p className="text-center text-xs mt-4 text-gray-500 md:px-6">
+                            {/* <p className="text-center text-xs mt-4 text-gray-500 md:px-6">
                               You will also receive my latest <u>portfolio</u> and <u>workflow</u>{' '}
                               blueprint sent directly to your inbox.
-                            </p>
+                            </p> */}
                             <p className="mb-0 text-muted text-center mt-4 text-gray-500">
                               Your privacy is protected
                             </p>
@@ -375,16 +375,13 @@ export default function Home() {
 
                           <p className="mb-4 lg:text-lg">
                             I'm now dedicated myself as{' '}
-                            <span className="underline font-bold">Technology Lead</span> at{' '}
+                            <span className=" font-bold">Tech Manager</span> at{' '}
                             <a
-                              href="https://www.rga.com"
+                              href="https://www.komunal.co.id"
                               target="_blank"
                               className="font-bold inline-flex items-center hover:underline"
                               rel="noopener noreferrer">
-                              <span
-                                className="inline-flex w-4 h-4 mr-1"
-                                style={{ background: 'red' }}></span>
-                              R/GA
+                              Komunal
                             </a>
                           </p>
 

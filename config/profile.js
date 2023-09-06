@@ -52,12 +52,71 @@ const profile = {
   ],
   experiences: [
     {
+      company: 'Komunal',
+      logoCompany: 'https://via.placeholder.com/12/e51837?text=+',
+      promotion: [
+        {
+          title: 'Tech Manager',
+          year: 'Sep 2023 - Present',
+          summary: [
+            'Lead and inspire a small team of 4-5 individuals, guiding them towards becoming proficient full-stack developers.',
+            'Set the standard for code quality by consistently writing clean and highly readable code.',
+            'Leverage my extensive experience, building technology solutions and software products, to help my team solve complex technical problems.',
+            'Implement and manage Continuous Integration/Continuous Deployment (CI/CD) pipelines to ensure efficient and reliable software delivery.',
+            'Make informed and technically sound decisions that align with our business goals.',
+            'Mentorship and team building for the software engineering team',
+            'Assess, prioritize, and streamline tasks effectively to ensure our team meets critical project milestones and deadlines.',
+            'Collaborate closely with cross-functional teams to gather requirements, plan project execution, and deliver high-quality software solutions.',
+            'Apply agile methodologies rigorously to drive project success or, at a minimum, maintain a strong belief in and appreciation for agile principles.',
+            'Communicate early, clearly, and succinctly with team members and stakeholders, fostering alignment and transparency.'
+          ],
+        }
+      ],
+    },
+    {
+      company: 'Yoona',
+      logoCompany: 'https://via.placeholder.com/12/e51837?text=+',
+      promotion: [
+        {
+          title: 'Engineering Manager',
+          year: 'Jan 2023 - Aug 2023',
+          summary: [
+            'Technical decision making and architecture design',
+            'Resource management and Agile planning and execution',
+            'Hands on for MVP and complex features (Full stack)',
+            'Deployment and maintaining all of our internal and external apps and services',
+            'Mentorship and team building for the engineering team',
+            'Hiring and talent management',
+            'Budgeting and cost management',
+            'Stakeholder management and liaison between technical and non-technical stakeholders. (CTO, CEO, CCO)',
+            'Working closely with the product team to ensure the product is delivered on time and on budget',
+            '3rd party vendor integration and management',
+            'Security and compliance',
+          ],
+        },
+        {
+          title: 'Lead Engineer',
+          year: 'Feb 2022 - Dec 2022',
+          summary: [
+            'Acting as a technology consultant for the company (directly to CTO and stakeholders)',
+            'Creating and implementing high-quality technology solutions',
+            'My role is delivering innovative solutions and driving growth and success for early phase of Yoona.',
+            'Developing and implementing technical best practices for all Yoona products',
+            'Overseeing technical aspects of the company’s strategy to ensure alignment with its business goals',
+            'Discovering and implementing new technologies that yield competitive advantage',
+            'Helping departments use technology profitably',
+            'Developing custom ecommerce solutions for Yoona',
+          ],
+        },
+      ],
+    },
+    {
       company: 'R/GA',
       logoCompany: 'https://via.placeholder.com/12/e51837?text=+',
       promotion: [
         {
           title: 'Technology Lead',
-          year: 'May 2022 - Present',
+          year: 'May 2022 - Dec 2022',
           summary: [
             'Connecting people across globe through technical assesment for potential project and collaboration',
             'Oversee & Manage APAC (Indonesia Office) Technology Team to ensure working experience, growing factor, and successful deliveries.',
@@ -156,13 +215,10 @@ const profile = {
   cover: 'https://i.imgur.com/i4NZURh.jpg',
   recentSkills: [
     'Next.js + TailwindCSS',
+    'BI & Analytics',
     'TypeScript',
-    // 'Python',
-    // 'Microsoft Azure',
-    'Contentful',
-    'Storybook',
-    'Uniform',
-    'GraphCMS',
+    'API & Custom Integration',
+    'Dashboard & Reporting',
   ],
   allSkills: [
     'React.js',
